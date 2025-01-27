@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Hairstyles - 5 River Barbers</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: url(modern.jpg) no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            padding: 50px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #ffcb47;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: slideIn 1s ease-out;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            animation: fadeIn 2s ease-in-out;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        li {
+            font-size: 1.1rem;
+            margin: 10px 0;
+            transition: transform 0.3s;
+        }
+        li:hover {
+            transform: rotateY(15deg);
+            color: #ffcb47;
+        }
+        a.back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ffcb47;
+            color: #0f0f0f;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            animation: zoomIn 1s ease-in-out;
+        }
+        a.back-link:hover {
+            background-color: #e68a00;
+        }
+
+        /* 3D Animation Effects */
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        /* Card Style for Each Service */
+        .service-card {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+        }
+
+        .service-card h3 {
+            color: #ffcb47;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Modern Hairstyles</h1>
+        <p>Stay on trend with our stylish modern hairstyles. Whether you're after a fade, undercut, or a creative look, our barbers will give you a sharp, contemporary cut.</p>
+        <h2>Services Offered:</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <h3>Undercut</h3>
+                <p>A versatile style, the undercut gives you clean sides and top flexibility. It's perfect for a bold, modern look.</p>
+            </div>
+            <div class="service-card">
+                <h3>Fades</h3>
+                <p>The fade offers a smooth transition between different hair lengths, sleek finish that looks fresh and edgy.</p>
+            </div>
+            <div class="service-card">
+                <h3>Pompadour</h3>
+                <p>Classic yet modern, the pompadour adds volume and height to your hair, giving you a refined and stylish appearance.</p>
+            </div>
+            <div class="service-card">
+                <h3>Textured Cuts</h3>
+                <p>Ideal for adding movement and shape to your hair, textured cuts give you a relaxed yet trendy vibe, perfect for any occasion.</p>
+            </div>
+        </div>
+        <p>Transform your look with our modern styles. Book an appointment now and let us help you achieve your perfect haircut!</p>
+        <a href="index.html" class="back-link">Back to Services</a>
+    </div>
+</body>
+</html>

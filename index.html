@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 River Barbers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1>5 Rivers Barber Shop</h1>
+            <p>More than 7 years of experienced barbers providing the finest haircuts!</p>
+        </div>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#booking">Book Now</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div class="container">
+            <h2>Welcome to 5 River Barbers</h2>
+            <p>Your ultimate destination for professional grooming and hair styling.</p>
+            <p>
+        </div>
+    </section>
+    
+
+    <div class="carousel-container">
+        <div class="carousel">
+          <!-- Barber 1 -->
+          <div class="profile">
+            <img src="barber1.jpg" alt="Barber 1">
+            <h3>Barber 1 - Jass</h3>
+            <p>Experienced in men's cuts, beard grooming, and styling. Friendly and professional service.</p>
+            <button class="book-btn" onclick="bookBarber(1)">Book Now</button>
+          </div>
+    
+          <!-- Barber 2 -->
+          <div class="profile">
+            <img src="gurbir.png" alt="Barber 2">
+            <h3>Barber 2 - Gurbir</h3>
+            <p>Specializes in fades, classic cuts, and modern styles. Always up to date with trends.</p>
+            <button class="book-btn" onclick="bookBarber(2)">Book Now</button>
+          </div>
+    
+          <!-- Barber 3 -->
+          <div class="profile">
+            <img src="vishal.png" alt="Barber 3">
+            <h3>Barber 3 - Vishal</h3>
+            <p>Expert in beard shaping and haircuts for all ages. Skilled in razor shaves and grooming.</p>
+            <button class="book-btn" onclick="bookBarber(3)">Book Now</button>
+          </div>
+    
+          <!-- Barber 4 -->
+          <div class="profile">
+            <img src="sahil.png" alt="Barber 4">
+            <h3>Barber 4 - Sahil Mall</h3>
+            <p>Passionate about creating stylish looks. Attention to detail and exceptional customer service.</p>
+            <button class="book-btn" onclick="bookBarber(4)">Book Now</button>
+          </div>
+    
+          <!-- Barber 5 -->
+          <div class="profile">
+            <img src="rahul.jpg" alt="Barber 5">
+            <h3>Barber 5 - Rahul</h3>
+            <p>Specializes in curly and textured hair. Known for precision cuts and high-quality products.</p>
+            <button class="book-btn" onclick="bookBarber(5)">Book Now</button>
+          </div>
+    
+          <!-- Barber 6 -->
+          <div class="profile">
+            <img src="manish.png" alt="Barber 6">
+            <h3>Barber 6 - Manish</h3>
+            <p>Focuses on creating clean lines and modern fades. Offers haircuts and beard trimming.</p>
+            <button class="book-btn" onclick="bookBarber(6)">Book Now</button>
+          </div>
+    
+          <!-- Barber 7 -->
+          <div class="profile">
+            <img src="barber7.jpg" alt="Barber 7">
+            <h3>Barber 7 - Ravi</h3>
+            <p>Proficient in hair coloring, styling, and cutting. Great with both classic and trendy looks.</p>
+            <button class="book-btn" onclick="bookBarber(7)">Book Now</button>
+          </div>
+        </div>
+      </div>
+        
+        <!-- Booking Form -->
+        <div class="booking-form">
+            <h2>Book Your Barber</h2>
+            <form action="yourBookingSystemURL" method="POST">
+            <label for="barber-select">Choose a Barber:</label>
+            <select id="barber-select" name="barber" required>
+                <option value="Barber1">Barber 1 - Jass</option>
+                <option value="Barber2">Barber 2 - Gurbir</option>
+                <option value="Barber3">Barber 3 - Vishal</option>
+                <option value="Barber4">Barber 4 - Sahil Mall</option>
+                <option value="Barber5">Barber 5 - Rahul</option>
+                <option value="Barber6">Barber 6 - Manish</option>
+                <option value="Barber7">Barber 7 - Ravi</option>
+            </select>
+        
+            <label for="appointment-date">Choose an Appointment Date:</label>
+            <input type="date" id="appointment-date" name="appointment-date" required>
+        
+            <label for="appointment-time">Choose an Appointment Time:</label>
+            <input type="time" id="appointment-time" name="appointment-time" required>
+        
+            <button type="submit">Book Appointment</button>
+            </form>
+        </div>
+        
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-buttons">
+                <button class="service-btn" onclick="window.location.href='classic-haircuts.html'">Classic Haircuts</button>
+                <button class="service-btn" onclick="window.location.href='beard-trims.html'">Beard Trims</button>
+                <button class="service-btn" onclick="window.location.href='hot-towel-shaves.html'">Hot Towel Shaves</button>
+                <button class="service-btn" onclick="window.location.href='modern-hairstyles.html'">Modern Hairstyles</button>
+                <button class="service-btn" onclick="window.location.href='kids-haircuts.html'">Kids' Haircuts</button>
+            </div>
+
+            <h3>Our Basic Haircut Offers</h3>
+            <p>At 5 River Barbers, we offer a wide variety of classic and modern haircuts for all ages and styles:</p>
+            <ul>
+                <li><strong>Classic Haircut</strong> - A timeless haircut that fits any occasion.</li>
+                <li><strong>Fade Cuts</strong> - A stylish fade to keep you looking sharp.</li>
+                <li><strong>Buzz Cuts</strong> - Perfect for those who like low-maintenance and clean styles.</li>
+                <li><strong>Pompadours</strong> - A modern classic for a bold, stylish look.</li>
+                <li><strong>Undercuts</strong> - Sleek and edgy, with short sides and longer top sections.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>
+                At 5 River Barbers, we are more than just a barbershop — we are a place where tradition meets modern style. With over 7 years of experience, our skilled barbers are passionate about providing high-quality, personalized grooming services for every client. We specialize in both classic and contemporary haircuts, ensuring that each client leaves looking and feeling their best.
+            </p>
+    
+            <h3>Our Expertise</h3>
+            <p>
+                Our team of barbers has extensive training and a deep understanding of hair types, face shapes, and the latest trends in men's grooming. Whether you're looking for a traditional clean-cut, a stylish fade, or a bold new look, we have the skills and expertise to bring your vision to life. We work closely with each client to understand their needs and preferences, ensuring a tailored experience every time you visit.
+            </p>
+    
+            <h3>Our Mission</h3>
+            <p>
+                At 5 River Barbers, our mission is to provide a welcoming, comfortable environment where every client can enjoy a premium grooming experience. We strive to offer not only the best haircuts but also exceptional customer service, where every detail matters. We believe that great grooming goes beyond the haircut — it’s about building lasting relationships with our clients.
+            </p>
+    
+            <h3>What We Offer</h3>
+            <p>
+                We offer a wide range of services that cater to different styles, preferences, and occasions:
+            </p>
+            <ul>
+                <li><strong>Classic Haircuts:</strong> Traditional styles that never go out of fashion. Perfect for anyone looking for a timeless, neat look.</li>
+                <li><strong>Modern Fades:</strong> Stylish, clean, and trendy fade cuts for those who like to keep up with the latest grooming trends.</li>
+                <li><strong>Beard Grooming:</strong> Beard trims, shaping, and maintenance to keep your facial hair sharp and well-kept.</li>
+                <li><strong>Hot Towel Shaves:</strong> Experience the luxury of a relaxing hot towel shave, leaving you feeling refreshed and rejuvenated.</li>
+                <li><strong>Kids' Haircuts:</strong> Fun, gentle, and stylish haircuts for children of all ages. We make the experience enjoyable and stress-free for the little ones!</li>
+            </ul>
+    
+            <h3>Our Responsibilities</h3>
+            <ul>
+                <li><strong>Expert Advice:</strong> Our barbers take the time to listen to your preferences and offer expert advice on what style will suit you best, whether it's a traditional cut or something more contemporary.</li>
+                <li><strong>Precision and Attention to Detail:</strong> Every haircut is crafted with precision, ensuring that we achieve the perfect style tailored to your look and personality.</li>
+                <li><strong>Cleanliness and Hygiene:</strong> We prioritize the health and safety of our clients by maintaining a clean, sanitized environment for every haircut and grooming service.</li>
+                <li><strong>Customer Satisfaction:</strong> Your satisfaction is our top priority. If you're not happy with your cut, we'll work with you until you are. We guarantee a personalized experience that leaves you feeling confident and refreshed.</li>
+            </ul>
+        </div>
+    </section>
+    
+      
+    
+
+    <!-- Booking Section -->
+    
+    <section id="appointment">
+        <h2>Book Your Appointment</h2>
+        <form id="appointmentForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="barber">Choose Your Barber:</label>
+            <select id="barber" name="barber" required>
+                <option value="Barber1">Barber 1 - Jass</option>
+                <option value="Barber2">Barber 2 - Gurbir</option>
+                <option value="Barber3">Barber 3 - Vishal</option>
+                <option value="Barber4">Barber 4 - Sahil Mall</option>
+                <option value="Barber5">Barber 5 - Rahul</option>
+                <option value="Barber6">Barber 6 - Manish</option>
+                <option value="Barber7">Barber 7 - Ravi</option>
+                <option value="other">Other (Please specify)</option>
+            </select>
+    
+            <div id="otherBarber" style="display: none;">
+                <label for="otherName">Enter Barber Name:</label>
+                <input type="text" id="otherName" name="otherName">
+            </div>
+    
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+    
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+    
+            <label for="service">Service:</label>
+            <select id="service" name="service" required>
+                <option value="haircut">Haircut</option>
+                <option value="shave">Shave</option>
+                <option value="trim">Trim</option>
+            </select>
+    
+            <button type="submit">Book Appointment</button>
+        </form>
+    
+        <div id="confirmationMessage"></div>
+    </section>
+     <!-- Google Reviews Section -->
+
+    
+
+
+<!-- Contact Section -->
+<section id="contact" class="contact" style="background-color: #161111a2; padding: 20px;">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>Email: info@5riverbarbers.com</p>
+        <p>Phone: +1 9054600999</p>
+        <p>Address: 332 Main st North Brampton, Barber Town</p>
+    </div>
+</section>
+
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 5 River Barbers. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    
+    <script>
+        // Function to handle the booking process (redirect to a profile or booking page)
+        function bookBarber(barberId) {
+          window.location.href = `barberProfile.html?id=${barberId}`; // Redirect to individual barber's profile page
+        }
+      </script>
+
+</body>
+</html>
