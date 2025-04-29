@@ -139,6 +139,42 @@ button:hover {
 }
 
 
+.pricing-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }
+  
+  .pricing-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid #eee;
+    background-color: #ffcb47;
+  }
+  
+  .pricing-row:nth-child(even) {
+    background-color: #000000;
+  }
+  
+  .pricing-header {
+    background-color: #222;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .pricing-type, .pricing-price {
+    flex: 1;
+    text-align: center;
+  }
+  
+  
 /* Global Styles */
 body, html {
     margin: 0;
@@ -469,6 +505,15 @@ section h2 {
     text-shadow: 0 0 10px #ffcb47;
     animation: zoomIn 1.2s ease-out forwards;
 }
+/* we update here the section bar for size h3 */
+
+section h3 {
+    font-size: 2.8rem;
+    color: #ffcb47;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #ffcb47;
+    animation: zoomIn 1.2s ease-out forwards;
+}
 
 section p {
     margin: 15px auto;
@@ -702,28 +747,7 @@ section p {
     transform: scale(1.05);
 }
 
-/* Optional: Delay for each barber profile */
-.profile:nth-child(1) {
-    animation: fadeIn 1s ease-in-out 0.3s forwards;
-}
-.profile:nth-child(2) {
-    animation: fadeIn 1s ease-in-out 0.6s forwards;
-}
-.profile:nth-child(3) {
-    animation: fadeIn 1s ease-in-out 0.9s forwards;
-}
-.profile:nth-child(4) {
-    animation: fadeIn 1s ease-in-out 1.2s forwards;
-}
-.profile:nth-child(5) {
-    animation: fadeIn 1s ease-in-out 1.5s forwards;
-}
-.profile:nth-child(6) {
-    animation: fadeIn 1s ease-in-out 1.8s forwards;
-}
-.profile:nth-child(7) {
-    animation: fadeIn 1s ease-in-out 2.1s forwards;
-}
+
 
 /* Styles for the container and barber images */
 .barbers-container {
