@@ -28,34 +28,48 @@ You <!DOCTYPE html>
             <p>
         </div>
     </section>
+<!-- Booking Form -->
+<div class="booking-form" id="booking">
+  <h2>Book Your Barber</h2>
+  <form action="yourBookingSystemURL" method="POST">
     
+    <!-- Customer Info -->
+    <label for="customer-name">Full Name:</label>
+    <input type="text" id="customer-name" name="customer-name" required>
 
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
 
-        
-        <!-- Booking Form -->
-        <div class="booking-form">
-            <h2>Book Your Barber</h2>
-            <form action="yourBookingSystemURL" method="POST">
-            <label for="barber-select">Choose a Barber:</label>
-            <select id="barber-select" name="barber" required>
-                <option value="Barber1">Barber 1 - Jass</option>
-                <option value="Barber2">Barber 2 - Gurbir</option>
-                <option value="Barber3">Barber 3 - Vishal</option>
-                <option value="Barber4">Barber 4 - Sahil Mall</option>
-                <option value="Barber5">Barber 5 - Rahul</option>
-                <option value="Barber6">Barber 6 - Manish</option>
-                <option value="Barber7">Barber 7 - Ravi</option>
-            </select>
-        
-            <label for="appointment-date">Choose an Appointment Date:</label>
-            <input type="date" id="appointment-date" name="appointment-date" required>
-        
-            <label for="appointment-time">Choose an Appointment Time:</label>
-            <input type="time" id="appointment-time" name="appointment-time" required>
-        
-            <button type="submit">Book Appointment</button>
-            </form>
-        </div>
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="1234567890">
+
+    <label for="notes">Any Notes (optional):</label>
+    <textarea id="notes" name="notes" rows="3" placeholder="e.g., skin fade, beard trim..."></textarea>
+
+    <!-- Barber and Booking Info -->
+    <label for="barber-select">Choose a Barber:</label>
+    <select id="barber-select" name="barber" required>
+      <option value="">-- Select a Barber --</option>
+      <option value="Barber1">Barber 1 - Jass</option>
+      <option value="Barber2">Barber 2 - Gurbir</option>
+      <option value="Barber3">Barber 3 - Vishal</option>
+      <option value="Barber4">Barber 4 - Sahil Mall</option>
+      <option value="Barber5">Barber 5 - Rahul</option>
+      <option value="Barber6">Barber 6 - Manish</option>
+      <option value="Barber7">Barber 7 - Ravi</option>
+    </select>
+
+    <label for="appointment-date">Choose a Date:</label>
+    <input type="date" id="appointment-date" name="appointment-date" required>
+
+    <label for="appointment-time">Choose a Time:</label>
+    <input type="time" id="appointment-time" name="appointment-time" required>
+
+    <!-- Form Buttons -->
+    <button type="submit">Book Appointment</button>
+    <button type="reset">Reset</button>
+  </form>
+</div>
         
 
     <!-- Services Section -->
