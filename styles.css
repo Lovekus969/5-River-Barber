@@ -428,7 +428,9 @@ h2 {
 
 /* Body Styling */
 body {
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; 
+
+
     background: url('https://wallpapercave.com/wp/wp9441547.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #ffffff;
