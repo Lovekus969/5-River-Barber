@@ -29,9 +29,10 @@ You <!DOCTYPE html>
         </div>
     </section>
 <!-- Booking Form -->
+ <!-- Booking Form -->
 <div class="booking-form" id="booking">
   <h2>Book Your Barber</h2>
-  <form action="yourBookingSystemURL" method="POST">
+  <form id="appointment-form" method="POST">
     
     <!-- Customer Info -->
     <label for="customer-name">Full Name:</label>
@@ -46,17 +47,30 @@ You <!DOCTYPE html>
     <label for="notes">Any Notes (optional):</label>
     <textarea id="notes" name="notes" rows="3" placeholder="e.g., skin fade, beard trim..."></textarea>
 
+    <!-- Location Selection -->
+    <fieldset>
+      <legend>Select Location:</legend>
+      <label>
+        <input type="radio" name="location" value="Olivia Marie Gardens" required>
+        Olivia Marie Gardens - 20 Sky Harbour Dr
+      </label><br>
+      <label>
+        <input type="radio" name="location" value="Main Street">
+        Main Street - 332 Main St N
+      </label>
+    </fieldset>
+
     <!-- Barber and Booking Info -->
     <label for="barber-select">Choose a Barber:</label>
     <select id="barber-select" name="barber" required>
       <option value="">-- Select a Barber --</option>
-      <option value="Barber1">Barber 1 - Jass</option>
-      <option value="Barber2">Barber 2 - Gurbir</option>
-      <option value="Barber3">Barber 3 - Vishal</option>
-      <option value="Barber4">Barber 4 - Sahil Mall</option>
-      <option value="Barber5">Barber 5 - Rahul</option>
-      <option value="Barber6">Barber 6 - Manish</option>
-      <option value="Barber7">Barber 7 - Ravi</option>
+      <option value="Jass">Barber 1 - Jass</option>
+      <option value="Gurbir">Barber 2 - Gurbir</option>
+      <option value="Vishal">Barber 3 - Vishal</option>
+      <option value="Sahil">Barber 4 - Sahil Mall</option>
+      <option value="Rahul">Barber 5 - Rahul</option>
+      <option value="Manish">Barber 6 - Manish</option>
+      <option value="Ravi">Barber 7 - Ravi</option>
     </select>
 
     <label for="appointment-date">Choose a Date:</label>
@@ -70,6 +84,7 @@ You <!DOCTYPE html>
     <button type="reset">Reset</button>
   </form>
 </div>
+
         
 
     <!-- Services Section -->
