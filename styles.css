@@ -944,3 +944,25 @@ section p {
         flex: 1 1 100%; /* Make each profile take the full width on smaller screens */
     }
 }
+  
+  button:hover {
+    background-color: #007bff; /* darker tone */
+    transform: scale(1.05); /* slight zoom */
+  }
+  .nav-link {
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #fbbf24; /* gold-like highlight */
+  }
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px #007bff;
+  }
+      
