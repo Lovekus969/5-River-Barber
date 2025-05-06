@@ -961,8 +961,59 @@ section p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px #007bff;
+  
+/* ================== Responsive Design for Viewports Below 720px ================== */
+@media screen and (max-width: 720px) {
+  .container,
+  .home .container,
+  .about .container,
+  .booking-form,
+  #appointment {
+    padding: 20px 10px;
+    width: 95% !important;
+    margin: 10px auto;
   }
+
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .cta-button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+
+  form {
+    gap: 10px;
+  }
+
+  input[type="date"], input[type="time"] {
+    max-width: 100%;
+  }
+
+  .pricing-table {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .pricing-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .pricing-type, .pricing-price {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+
       
