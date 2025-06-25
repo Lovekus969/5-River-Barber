@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book Appointment - 5 River Barbers</title>
+  <link rel="stylesheet" href="styles.css" /> <!-- your global CSS -->
+</head>
+<body>
+  <!-- Your existing site header -->
+  <header>
+   
+
+  </header>
+    <!-- Navigation Section -->
+  <nav class="navbar">
+    <nav><ul>
+  
+  
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#about">About Us</a></li>
+    <li><a href="booking.html">Book Now</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+   </ul>
+</nav>
+
+    </ul>
+  </nav>
+
+  <main>
+    <div class="booking-form" id="booking" style="max-width:600px; margin: auto; padding: 20px;">
+      <h2>Snip Happens – Book Now!</h2>
+      <form id="appointment-form" method="POST" onsubmit="handleFormSubmission(event)">
+
+        <!-- Customer Info -->
+        <label for="customer-name">Full Name:</label>
+        <input type="text" id="customer-name" name="customer-name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="1234567890">
+
+        <label for="notes">Any Notes (optional):</label>
+        <textarea id="notes" name="notes" rows="3" placeholder="e.g., skin fade, beard trim..."></textarea>
+
+        <!-- Location Selection -->
+        <fieldset>
+          <legend>Select Location:</legend>
+          <select name="location" required>
+            <option value="" disabled selected>-- Choose a Location --</option>
+            <option value="Olivia Marie Gardens">Olivia Marie Gardens - 20 Sky Harbour Dr</option>
+            <option value="Main Street">Main Street - 332 Main St N</option>
+          </select>
+        </fieldset>
+
+        <!-- Barber and Booking Info -->
+        <label for="barber-select">Choose a Barber:</label>
+        <select id="barber-select" name="barber" required>
+          <option value="" disabled selected>-- Choose a Barber --</option>
+          <option value="Jass">Barber 1 - Jass</option>
+          <option value="Gurbir">Barber 2 - Gurbir</option>
+          <option value="Vishal">Barber 3 - Vishal</option>
+          <option value="Sahil">Barber 4 - Sahil Mall</option>
+          <option value="Rahul">Barber 5 - Rahul</option>
+          <option value="Manish">Barber 6 - Manish</option>
+          <option value="Ravi">Barber 7 - Ravi</option>
+        </select>
+
+        <label for="appointment-date">Choose a Date:</label>
+        <input type="date" id="appointment-date" name="appointment-date" required>
+
+        <label for="appointment-time">Choose a Time:</label>
+        <input type="time" id="appointment-time" name="appointment-time" required>
+
+        <!-- Form Buttons -->
+        <button type="submit">Book Appointment</button>
+        <button type="reset">Reset</button>
+
+        <p id="thank-you-msg" style="font-size: 1.5rem; color: green; display: none;"></p>
+      </form>
+    </div>
+  </main>
+   
+  <!-- Footer Section -->
+<footer class="footer" id="footer-section">
+  <div class="container">
+    <h3>Opening Hours</h3>
+    <ul class="shop-hours">
+      <li>Saturday: 9:30 a.m. – 9:00 p.m.</li>
+      <li>Sunday: 9:30 a.m. – 9:00 p.m.</li>
+      <li>Monday: 9:30 a.m. – 9:00 p.m.</li>
+      <li>Tuesday: 9:30 a.m. – 9:00 p.m.</li>
+      <li>Wednesday: 9:30 a.m. – 9:00 p.m.</li>
+      <li>Thursday: 9:30 a.m. – 9:00 p.m.</li>
+      <li>Friday: 9:30 a.m. – 9:00 p.m.</li>
+    </ul>
+    <div class="shop-location" id="contact">
+      <h2 style="color: #d4af37;">Contact Us</h2>
+      <p>Email: <a href="mailto:info@5riverbarbers.com" style="color: #d4af37;">info@5riverbarbers.com</a></p>
+     
+      <p><strong>📍 Olivia Marie Gardens</strong></p>
+      <p>In plaza side, 20 Sky Harbour Dr, Brampton, ON L6Y 0V7</p>
+      <p><i class="fas fa-phone-alt"></i> <a href="tel:9054600999">(905) 460-0999</a></p>
+    </div>
+
+    <div class="shop-location">
+      <p><strong>📍 Main Street</strong></p>
+      <p>332 Main St N, Brampton, ON L6V 1P8</p>
+      <p><i class="fas fa-phone-alt"></i> <a href="tel:9059569544">(905) 956-9544</a></p>
+    </div>
+     <!-- Social Media Links -->
+     <div class="social-links" style="margin-top: 20px;">
+      <h3 style="color: #fff;">Follow Us</h3>
+      <a href="https://www.tiktok.com/@5riversbarbershop" target="_blank" style="margin-right: 15px;">
+        <img src="Images/tik-tok.jpg" alt="TikTok" style="width: 32px; height: 32px;">
+      </a>
+      <a href="https://www.instagram.com/5rivers_barbershop/" target="_blank">
+        <img src="Images/insta.jpg" alt="Instagram" style="width: 32px; height: 32px;">
+      </a>
+    </div>
+
+    <p>
+  &copy; 2025 5 Rivers Barbers. All rights reserved. 
+  Made by <a href="https://www.linkedin.com/in/bhavneet-bhavneet-300998295/" target="_blank" style="color: rgb(8, 112, 181);">Kush</a>
+</p>
+
+    <a href="index.html" class="back-to-top" style="color: black;">⬆ Back to Home</a>
+
+  </div>
+ <div class="footer-maps" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+    <div class="map-location" style="flex: 1; min-width: 300px; max-width: 400px;">
+      <h4>Olivia Marie Gardens</h4>
+     
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.833850063017!2d-79.7812596229713!3d43.630816971103144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b6b1d8a3b3bad%3A0x904b41a64554e37d!2s5%20Rivers%20Barbershop!5e0!3m2!1sen!2sca!4v1750792641584!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+
+    <div class="map-location" style="flex: 1; min-width: 300px; max-width: 400px;">
+      <h4>Main Street</h4>
+     
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.8229019757496!2d-79.77208482296894!3d43.69344507110022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b15dfecacd297%3A0xd69b228e0a3dc042!2s5%20Rivers%20Barbershop!5e0!3m2!1sen!2sca!4v1750792450497!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+  </div>
+  </footer>
+
+  <script>
+    function handleFormSubmission(event) {
+      event.preventDefault();
+      // You can put your form validation or submission logic here
+
+      // For demo, show thank you message and reset form
+      document.getElementById('thank-you-msg').style.display = 'block';
+      document.getElementById('thank-you-msg').innerText = 'Thank you for booking! We will contact you soon.';
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
