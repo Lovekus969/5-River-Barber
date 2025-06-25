@@ -151,8 +151,116 @@ You <!DOCTYPE html>
     </div>
   </section>
     <!-- Gallery Section with Animations -->
+ <section id="gallery" class="gallery" style="padding: 40px 20px; text-align: center;">
+  <div class="container">
+    <h2>Our Work</h2>
 
-// GALARY  haS BWEEN REMOVED 
+    <div class="gallery-grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+      <!-- Initially visible images -->
+      <img class="gallery-img" src="Images/img1.jpg" alt="Style 1" style="width: 30%; border-radius: 8px;">
+      <img class="gallery-img" src="Images/IMG2.jpg" alt="Style 2" style="width: 30%; border-radius: 8px;">
+      <img class="gallery-img" src="Images/IMG3.jpg" alt="Style 3" style="width: 30%; border-radius: 8px;">
+
+      <!-- Hidden by default -->
+      <img class="gallery-img hidden" src="Images/IMG4.jpg" alt="Style 4" style="width: 30%; border-radius: 8px;">
+      <img class="gallery-img hidden" src="Images/IMG5.jpg" alt="Style 5" style="width: 30%; border-radius: 8px;">
+      <img class="gallery-img hidden" src="Images/IMG6.jpg" alt="Style 6" style="width: 30%; border-radius: 8px;">
+      <img class="gallery-img hidden" src="Images/IMG7.jpg" alt="Style 7" style="width: 30%; border-radius: 8px;">
+      <img class="gallery-img hidden" src="Images/IMG8.jpg" alt="Style 8" style="width: 30%; border-radius: 8px;">
+      <img class="gallery-img hidden" src="Images/IMG9.jpg" alt="Style 9" style="width: 30%; border-radius: 8px;">
+      <img class="gallery-img hidden" src="Images/IMG10.jpg" alt="Style 10" style="width: 30%; border-radius: 8px;">
+      <img class="gallery-img hidden" src="Images/IMG11.jpg" alt="Style 11" style="width: 30%; border-radius: 8px;">
+      <img class="gallery-img hidden" src="Images/IMG12.jpg" alt="Style 12" style="width: 30%; border-radius: 8px;">
+      <img class="gallery-img hidden" src="Images/IMG13.jpg" alt="Style 13" style="width: 30%; border-radius: 8px;">
+      <img class="gallery-img hidden" src="Images/IMG14.jpg" alt="Style 14" style="width: 30%; border-radius: 8px;">
+      <img class="gallery-img hidden" src="Images/IMG15.jpg" alt="Style 15" style="width: 30%; border-radius: 8px;">
+    </div>
+
+    <button id="toggle-gallery" class="view-more-btn" style="margin-top: 20px; padding: 10px 25px; background-color: #ffcb47; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">
+      View More
+    </button>
+  </div>
+</section>
+
+<!-- Inline Styles & Script -->
+<style>
+  .hidden {
+    display: none;
+  }
+  
+  .gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .gallery-img {
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, opacity 0.6s ease;
+    opacity: 1;
+  }
+
+  .gallery-img.hidden {
+    display: none;
+    opacity: 0;
+  }
+
+  .gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Fade-in animation class */
+  .fade-in {
+    animation: fadeInImage 0.6s ease forwards;
+  }
+
+  @keyframes fadeInImage {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("toggle-gallery");
+    const allImages = document.querySelectorAll(".gallery-img.hidden");
+    let currentBatch = 0;
+    let clickCount = 0;
+
+    button.addEventListener("click", () => {
+      clickCount++;
+      let imagesToShow = clickCount <= 2 ? 3 : 5;
+      let start = currentBatch;
+      let end = currentBatch + imagesToShow;
+
+      for (let i = start; i < end && i < allImages.length; i++) {
+        allImages[i].classList.remove("hidden");
+        allImages[i].classList.add("fade-in"); // animate when revealed
+      }
+
+      currentBatch += imagesToShow;
+
+      if (currentBatch >= allImages.length) {
+        button.style.display = "none";
+      }
+
+      console.log(`Showing images ${start + 1} to ${Math.min(end, allImages.length)}`);
+    });
+  });
+</script>
+
+
+  
+
     <!-- About Us Section -->
     <section id="about" class="about">
         <div class="container">
