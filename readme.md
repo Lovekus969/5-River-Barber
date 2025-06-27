@@ -5,7 +5,7 @@ page pending : Modern style ... add some rates of the updated hair cut here .
 
 
 --------------------------------------------------------------------PROBLEMS --------------------------------------------------------------------------
-        View more button when we laying down the images its not working .
+        View more button when we laying down the images its not working . [ Solved Problem ] we fixed the inline js to set view more button 
 ----------------------------------------------------------------- what we had done so far -------------------------------------------------------------------------------
 Separated booking form into a standalone page (booking.html)
 
@@ -17,3 +17,4 @@ Added fade-in animations, hover effects, and responsive layout
 
 Integrated Google Maps for both shop locations in footer
 Next fixing problem mover slider is not working cheack url linked or not ...
+
