@@ -16,3 +16,4 @@ Improved gallery section with "View More" button logic
 Added fade-in animations, hover effects, and responsive layout
 
 Integrated Google Maps for both shop locations in footer
+Next fixing problem mover slider is not working cheack url linked or not ...
