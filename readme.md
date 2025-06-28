@@ -18,3 +18,31 @@ Added fade-in animations, hover effects, and responsive layout
 Integrated Google Maps for both shop locations in footer
 Next fixing problem mover slider is not working cheack url linked or not ...
 
+
+
+
+.................
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.............. what we have done so far and what we are going to do in short
+ Overview:
+As part of scaling the 5 River Barber platform, this project extends beyond the marketing website and introduces a fully functional software layer to manage appointments, prevent double bookings, and give exclusive access to the owner for managing internal business operations.
