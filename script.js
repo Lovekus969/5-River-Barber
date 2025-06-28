@@ -123,7 +123,7 @@ function handleFormSubmission(event) {
   );
 
   if (isConflict) {
-    alert("⚠️ This time slot is already booked for the selected location. Please pick a different time.");
+    alert(" This time slot is already booked for the selected location. Please pick a different time.");
     return;
   }
 
