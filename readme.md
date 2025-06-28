@@ -136,9 +136,23 @@ Search & Filter Appointments
 Payments Integration
 → Integrate Stripe or Square for pre-pay bookings (optional)
 
-Realtime Socket.io Notifications
 → Show real-time updates in owner panel without refreshing
 
+
+
+
+
+nest targret
+. Backend Integration (Express.js + MongoDB or Firebase)
+🔁 Save appointments permanently
+
+📥 Admin can log in and see/manage appointments
+
+✅ Prevent double-booking with real DB checks
+
+🔐 Keep owner details hidden from public
+
+What to learn: Node.js, Express.js, MongoDB or Firebase
 
 
 
