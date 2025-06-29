@@ -222,3 +222,23 @@ function animateFooterColor() {
   reactionBox.classList.add("visible");
 }
 
+// Initialize all event listeners on DOMContentLoaded
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("magic-btn").addEventListener("click", animateFooterColor);
+  setupGalleryToggle();
+});
+
+
+
+const magicBtn = document.getElementById("magic-btn");
+const hoverMsg = document.getElementById("hover-message");
+
+magicBtn.addEventListener("mouseover", () => {
+  hoverMsg.innerText = "🎨 Color Magic Loading...";
+  hoverMsg.classList.add("visible");
+});
+
+magicBtn.addEventListener("mouseout", () => {
+  hoverMsg.classList.remove("visible");
+});
+
