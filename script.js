@@ -188,3 +188,37 @@ if (pricingTable) {
     pricingTable.appendChild(row);
   });
 }
+
+// Animate footer background and text color
+function animateFooterColor() {
+  const footer = document.getElementById("footer-section");
+  const reactionBox = document.getElementById("footer-reaction");
+
+  const bgColorObj = getRandomBrightColor();
+  const bgColor = bgColorObj.rgb;
+  const textColor = invertColor(bgColorObj);
+
+  footer.style.backgroundColor = bgColor;
+  footer.style.color = textColor;
+  Array.from(footer.querySelectorAll("*")).forEach(el => (el.style.color = textColor));
+
+  // Glow effect
+  footer.style.boxShadow = `0 0 15px 5px ${bgColor}`;
+  setTimeout(() => {
+    footer.style.boxShadow = "none";
+  }, 1000);
+
+  // Scale effect
+  footer.style.transform = "scale(1.05)";
+  setTimeout(() => {
+    footer.style.transform = "scale(1)";
+  }, 300);
+
+  // Fade in message
+  reactionBox.classList.remove("visible");
+  void reactionBox.offsetWidth; // reflow
+  reactionBox.innerText = `🌈 Explorer Mode Activated! Background: ${bgColor}, Text: ${textColor}`;
+  reactionBox.style.color = textColor;
+  reactionBox.classList.add("visible");
+}
+
