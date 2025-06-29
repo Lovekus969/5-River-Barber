@@ -39,11 +39,6 @@ Next fixing problem mover slider is not working cheack url linked or not ...
 
 
 
-
-
-
-
-
 .............. what we have done so far and what we are going to do in short
  Overview:
 As part of scaling the 5 River Barber platform, this project extends beyond the marketing website and introduces a fully functional software layer to manage appointments, prevent double bookings, and give exclusive access to the owner for managing internal business operations.
@@ -156,6 +151,14 @@ nest targret
 🔐 Keep owner details hidden from public
 
 What to learn: Node.js, Express.js, MongoDB or Firebase
+
+
+
+
+
+
+Magic Button Hover Effect — Description
+This project demonstrates how to create an interactive, visually appealing hover effect on a circular button using HTML, CSS, and JavaScript. The goal is to engage users by providing real-time feedback with animations and messages when they interact with the button.
 
 
 
