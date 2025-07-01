@@ -160,6 +160,7 @@ What to learn: Node.js, Express.js, MongoDB or Firebase
 Magic Button Hover Effect — Description
 This project demonstrates how to create an interactive, visually appealing hover effect on a circular button using HTML, CSS, and JavaScript. The goal is to engage users by providing real-time feedback with animations and messages when they interact with the button.
 
+on magic button see how the mouse hover button work 
 
 
 
