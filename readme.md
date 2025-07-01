@@ -176,14 +176,12 @@ Use position: fixed or sticky to keep the flag visible while scrolling.
 // 2. Make it Interactive
 Add hover effects with CSS animations.
 
-Use JavaScript for subtle animations (e.g., flag waving).
+ what i done ...
+ Happy Canada Day, everyone! 🇨🇦
 
-Use Canvas or SVG animations for a smooth waving effect.
+To celebrate the spirit of this amazing country, I added a fresh and clean blurred background image effect to the homepage of the 5 Rivers Barbershop website. It gives off a sleek, modern vibe while staying true to the local feel of our Brampton-based shop. This is one of those subtle effects that adds a wow factor without overloading the site.
 
-3. Make it Responsive and Accessible
-Ensure it works well on all screen sizes.
 
-Make it keyboard accessible.
 
 
 
