@@ -1029,7 +1029,19 @@ section p {
     width: 100%;
     margin: 5px 0;
   }
+}/* For message */
+#hover-message {
+  font-size: 16px;
+  color: #ffcb47;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-align: center;
 }
+
+#hover-message.visible {
+  opacity: 1;
+}
+
 
 
       
