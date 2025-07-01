@@ -189,13 +189,29 @@ body, html {
     justify-content: space-between; /* Ensure content is spread out */
 }
 
+
+
 .container {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 100px 20px;
-    color: #ffffff;
-    flex-grow: 1; /* Allow this to take up available space */
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 100px 20px;
+  color: #ffffff;
+  flex-grow: 1; 
+  overflow: hidden; /* make sure blur doesn't overflow */
+}
+
+/* Add blurred background with opacity */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("https://smartcdn.gprod.postmedia.digital/nexus/wp-content/uploads/2023/06/pm-495472225.jpg?quality=90&strip=all&w=944&h=708&type=webp&sig=P8pWPuRX0bzpUDFEQBL0Ug");
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px);
+  opacity: 0.5; /* control darkness / lightness */
+  z-index: -1; /* behind the container content */
 }
 
 h1, h2, p, .falling-text {
