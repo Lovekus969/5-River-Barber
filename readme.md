@@ -183,7 +183,7 @@ To celebrate the spirit of this amazing country, I added a fresh and clean blurr
 
 
 
-
-
-
-
+User and Owner Conversation 
+                
+                Let’s now activate secret owner access using a keyboard combo like Ctrl + Shift + O + P (for “Owner Panel”), and reveal the hidden dashboard/management features only if the correct code is entered.
+                
