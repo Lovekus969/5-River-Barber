@@ -168,4 +168,8 @@ Here’s the plan for the Owner Profile Page (Manage Appointments):
 Header with title and welcome message Filter by location dropdown (Main Street, Olivia Marie Gardens, All) . Search by customer name or barber (optional, nice to have)
 
 List of appointments with clear details (name, location, barber, date/time, phone, notes) . Mark as completed / delete functionality to manage appointments (optional for now, but great to add) . Simple clean design and responsive
+
+
+
+                // problem is page is nor redirecting there is problem soemwhere i need to resolve i am loooking not founding may be problem is in page redirecting in an even lisstener 
                 
