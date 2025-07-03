@@ -112,30 +112,6 @@ Notification: Alert on dashboard (Future: Email/SMS)
 
 Hosting: Vergel for frontend, Render/Glitch for backend (can upgrade to VPS)
 
-🚀 Future Upgrades (Ideas to Add More Power):
-Admin Email Notifications
-→ Auto-send email on new booking via Node mailer
-
-Client Confirmation Emails/SMS
-→ Notify user that their appointment is confirmed
-
-Login System with JWT
-→ Replace local Storage with real login (secure sessions)
-
-PDF or CSV Export
-→ Download all appointments for offline access or records
-
-Calendar View in Admin Panel
-→ Display bookings in a date-wise calendar format
-
-Search & Filter Appointments
-→ By name, location, date, or time
-
-Payments Integration
-→ Integrate Stripe or Square for pre-pay bookings (optional)
-
-→ Show real-time updates in owner panel without refreshing
-
 
 
 
@@ -186,4 +162,10 @@ To celebrate the spirit of this amazing country, I added a fresh and clean blurr
 User and Owner Conversation 
                 
                 Let’s now activate secret owner access using a keyboard combo like Ctrl + Shift + O + P (for “Owner Panel”), and reveal the hidden dashboard/management features only if the correct code is entered.
+
+Plan for next day from today 3 july 2025 . 
+Here’s the plan for the Owner Profile Page (Manage Appointments):
+Header with title and welcome message Filter by location dropdown (Main Street, Olivia Marie Gardens, All) . Search by customer name or barber (optional, nice to have)
+
+List of appointments with clear details (name, location, barber, date/time, phone, notes) . Mark as completed / delete functionality to manage appointments (optional for now, but great to add) . Simple clean design and responsive
                 
