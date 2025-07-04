@@ -176,3 +176,8 @@ List of appointments with clear details (name, location, barber, date/time, phon
 
  DOM + Event Handling in JavaScript 
  
+ working on the 5 River Barber project — and I am building the Owner Dashboard / Update Section, which should:
+
+✅ Be accessible only to the owner
+✅ Allow updating important info (maybe bookings, availability, etc.)
+✅ In the future, may include login verification or protected routing
