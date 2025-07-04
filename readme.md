@@ -172,4 +172,7 @@ List of appointments with clear details (name, location, barber, date/time, phon
 
 
                 // problem is page is nor redirecting there is problem soemwhere i need to resolve i am loooking not founding may be problem is in page redirecting in an even lisstener 
-                
+
+
+ DOM + Event Handling in JavaScript 
+ 
