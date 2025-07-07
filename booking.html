@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css" /> <!-- your global CSS -->
 </head>
 <body>
-  <!-- Your existing site header -->
+ 
   <header>
    
 
@@ -68,6 +68,9 @@
           <option value="Rahul">Barber 5 - Rahul</option>
           <option value="Manish">Barber 6 - Manish</option>
           <option value="Ravi">Barber 7 - Ravi</option>
+           <option value="Ravi">Barber 8 - Classic -Barber </option>
+            <option value="Ravi">Barber 9 - Silver - Barber</option>
+             <option value="Ravi">Barber 10 - Golden Barber</option>
         </select>
 
         <label for="appointment-date">Choose a Date:</label>
@@ -84,7 +87,21 @@
       </form>
     </div>
   </main>
-   
+<!-- 📬 Admin Message Box (Visible to Owner Only) -->
+<section id="admin-messages-section" style="
+  background: #111;
+  color: #fff;
+  padding: 30px 20px;
+  margin: 40px auto;
+  border-radius: 10px;
+  max-width: 900px;
+  display: none;
+  font-family: sans-serif;
+">
+  <h3 style="color: #ffcb47;">📬 New Appointments for This Location</h3>
+  <ul id="admin-messages" style="list-style: none; padding-left: 0;"></ul>
+</section>
+
   <!-- Footer Section -->
 <footer class="footer" id="footer-section">
   <div class="container">
@@ -148,17 +165,53 @@
     </div>
   </div>
   </footer>
+  <script src="booking.js"></script>
+<script>
+  const bookedSlots = [];
 
-  <script>
-    function handleFormSubmission(event) {
-      event.preventDefault();
-      // You can put your form validation or submission logic here
+  function playCheerfulTone() {
+    const audio = new Audio("sounds/confirmation-tone.mp3");
+    audio.play();
+  }
 
-      // For demo, show thank you message and reset form
-      document.getElementById('thank-you-msg').style.display = 'block';
-      document.getElementById('thank-you-msg').innerText = 'Thank you for booking! We will contact you soon.';
-      event.target.reset();
+  function thankUserByName(name) {
+    console.log(`Thank you, ${name}!`);
+    // Optionally do text-to-speech or animation
+  }
+
+  function handleFormSubmission(event) {
+    event.preventDefault(); // ✨ Important
+
+    const name = document.getElementById("customer-name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const notes = document.getElementById("notes").value.trim();
+    const location = document.querySelector("select[name='location']").value;
+    const barber = document.getElementById("barber-select").value;
+    const date = document.getElementById("appointment-date").value;
+    const time = document.getElementById("appointment-time").value;
+
+    const isConflict = bookedSlots.some(
+      slot => slot.location === location && slot.date === date && slot.time === time
+    );
+
+    if (isConflict) {
+      alert("⚠️ This time slot is already booked for the selected location. Please pick a different time.");
+      return;
     }
-  </script>
+
+    bookedSlots.push({ location, date, time });
+    playCheerfulTone();
+
+    setTimeout(() => {
+      const msg = document.getElementById("thank-you-msg");
+      msg.textContent = `🎉 Thanks ${name}! Your appointment with ${barber} at ${location} on ${date} at ${time} is confirmed.`;
+      msg.style.display = "block";
+      thankUserByName(name);
+      document.getElementById("appointment-form").reset();
+    }, 2000);
+  }
+</script>
+
 </body>
 </html>
