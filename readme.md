@@ -4,6 +4,9 @@ appointment then go to appointment section otherwise dont jsut through here and 
 page pending : Modern style ... add some rates of the updated hair cut here .
 
 
+...................work completed by today -------------------
+We have  successfully completer owner page which is hidden once owner press ctrl + alt +_ o the psge is gonna open secretly .
+
 --------------------------------------------------------------------PROBLEMS --------------------------------------------------------------------------
         View more button when we laying down the images its not working . [ Solved Problem ] we fixed the inline js to set view more button  _------------------------- I applies internal inline js which works need to cheack file too much bugs inside due to the precedence of slector it was not working 
         
