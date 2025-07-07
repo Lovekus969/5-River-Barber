@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Owner Dashboard - Manage Appointments</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" /> <!-- Link to your global site CSS -->
+
+  <style>
+    /* Owner dashboard-specific styles */
+    .owner-dashboard {
+      max-width: 960px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #121212;
+      color: #eee;
+    }
+
+    h1 {
+      color: #d4af37;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    select, input[type="text"] {
+      padding: 8px 12px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .appointment-card {
+      background-color: #222;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 16px;
+      box-shadow: 0 0 6px #d4af37;
+    }
+
+    .appointment-header {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #ffd700;
+    }
+
+    .appointment-details {
+      font-size: 15px;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .no-appointments {
+      text-align: center;
+      font-style: italic;
+      margin-top: 40px;
+      color: #999;
+    }
+  </style>
+</head>
+<body class="owner-dashboard">
+
+  <!-- Optional: You can copy the site's navbar here if needed -->
+
+  <h1>📬 Manage Appointments - Owner Dashboard</h1>
+
+  <div>
+    <label for="location-filter">Filter by Location:</label>
+    <select id="location-filter">
+      <option value="">All Locations</option>
+      <option value="Olivia Marie Gardens">Olivia Marie Gardens</option>
+      <option value="Main Street">Main Street</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="search-input">Search (Name or Barber):</label>
+    <input type="text" id="search-input" placeholder="Type to search..." />
+  </div>
+
+  <ul id="appointments-list">
+    <!-- Appointments will be rendered here -->
+  </ul>
+
+
+  
+  <script>
+    const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+    const list = document.getElementById('appointments-list');
+    const locationFilter = document.getElementById('location-filter');
+    const searchInput = document.getElementById('search-input');
+
+    function renderAppointments() {
+      const filterLoc = locationFilter.value.toLowerCase();
+      const searchTerm = searchInput.value.toLowerCase();
+
+      const filtered = appointments.filter(appt => {
+        const matchesLocation = filterLoc === '' || appt.location.toLowerCase() === filterLoc;
+        const matchesSearch =
+          appt.name.toLowerCase().includes(searchTerm) ||
+          appt.barber.toLowerCase().includes(searchTerm);
+        return matchesLocation && matchesSearch;
+      });
+
+      list.innerHTML = '';
+      if (filtered.length === 0) {
+        list.innerHTML = '<p class="no-appointments">No appointments found.</p>';
+        return;
+      }
+
+      filtered.forEach((appt, i) => {
+        const li = document.createElement('li');
+        li.className = 'appointment-card';
+        li.innerHTML = `
+          <div class="appointment-header">${i + 1}. ${appt.name} — <em>${appt.location}</em></div>
+          <div class="appointment-details">
+            <strong>Barber:</strong> ${appt.barber}<br/>
+            <strong>Date & Time:</strong> ${appt.date} @ ${appt.time}<br/>
+            <strong>Phone:</strong> ${appt.phone}<br/>
+            <strong>Email:</strong> ${appt.email}<br/>
+            <strong>Notes:</strong> ${appt.notes || 'None'}
+          </div>
+        `;
+        list.appendChild(li);
+      });
+    }
+
+    // Initial render
+    renderAppointments();
+
+    // Event listeners
+    locationFilter.addEventListener('change', renderAppointments);
+    searchInput.addEventListener('input', renderAppointments);
+  </script>
+</body>
+</html>
