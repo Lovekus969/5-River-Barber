@@ -37,11 +37,18 @@
     }
 
     .appointment-card {
-      background-color: #222;
-      border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 16px;
-      box-shadow: 0 0 6px #d4af37;
+      .appointment-card {
+    background-color: rgba(34, 34, 34, 0.6); /* semi-transparent dark */
+    backdrop-filter: blur(8px); /* blur behind the card */
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 16px;
+    box-shadow: 0 0 6px #d4af37;
+    color: #eee;
+    transition: background-color 0.3s ease;
+}
+
     }
 
     .appointment-header {
@@ -88,6 +95,22 @@
   <ul id="appointments-list">
     <!-- Appointments will be rendered here -->
   </ul>
+<!-- Add this inside your body above the script or inside your dashboard container -->
+
+<!-- Add sorting buttons and export -->
+<div style="margin: 20px 0; display: flex; gap: 15px; flex-wrap: wrap; align-items: center;">
+  <label for="sort-select" style="font-weight:bold;">Sort by Date:</label>
+  <select id="sort-select" style="padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+    <option value="asc" selected>Ascending</option>
+    <option value="desc">Descending</option>
+  </select>
+
+  <button id="export-btn" style="padding: 8px 15px; background: #ffcb47; border: none; border-radius: 5px; cursor: pointer;  color: #000;font-weight: bold;">
+    Export CSV
+  </button>
+</div>
+
+<p id="appointments-count" style="font-weight: bold; margin-bottom: 20px; color: #ffcb47;"></p>
 
 
   
@@ -96,11 +119,29 @@
     const list = document.getElementById('appointments-list');
     const locationFilter = document.getElementById('location-filter');
     const searchInput = document.getElementById('search-input');
+    const sortSelect = document.getElementById('sort-select');
+    const exportBtn = document.getElementById('export-btn');
+    const countDisplay = document.getElementById('appointments-count');
+   
+    function formatDateForCompare(dateStr) {
+        // Format yyyy-mm-dd to comparable Date object
+        return new Date(dateStr);
+      }
+
+      function isToday(dateStr) {
+        const today = new Date();
+        const d = new Date(dateStr);
+        return (
+          d.getDate() === today.getDate() &&
+          d.getMonth() === today.getMonth() &&
+          d.getFullYear() === today.getFullYear()
+        );
+      }
 
     function renderAppointments() {
       const filterLoc = locationFilter.value.toLowerCase();
       const searchTerm = searchInput.value.toLowerCase();
-
+     const sortOrder = sortSelect.value;
       const filtered = appointments.filter(appt => {
         const matchesLocation = filterLoc === '' || appt.location.toLowerCase() === filterLoc;
         const matchesSearch =
@@ -108,16 +149,34 @@
           appt.barber.toLowerCase().includes(searchTerm);
         return matchesLocation && matchesSearch;
       });
+        // Sort filtered appointments by date
+        filtered.sort((a, b) => {
+          const dateA = formatDateForCompare(a.date);
+          const dateB = formatDateForCompare(b.date);
+          return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+        });
 
       list.innerHTML = '';
       if (filtered.length === 0) {
         list.innerHTML = '<p class="no-appointments">No appointments found.</p>';
         return;
       }
-
+  countDisplay.textContent = `Showing ${filtered.length} appointment${filtered.length !== 1 ? 's' : ''}`;
       filtered.forEach((appt, i) => {
         const li = document.createElement('li');
         li.className = 'appointment-card';
+
+        // Highlight today’s appointments
+    if (isToday(appt.date)) {
+      li.style.backgroundColor = '#444422'; // dark gold-ish background
+      li.style.boxShadow = '0 0 10px #d4af37';
+    } else {
+      li.style.backgroundColor = '#222';
+      li.style.boxShadow = '0 0 6px #d4af37';
+    }
+
+
+
         li.innerHTML = `
           <div class="appointment-header">${i + 1}. ${appt.name} — <em>${appt.location}</em></div>
           <div class="appointment-details">
@@ -127,9 +186,84 @@
             <strong>Email:</strong> ${appt.email}<br/>
             <strong>Notes:</strong> ${appt.notes || 'None'}
           </div>
+      <button class="delete-btn" data-index="${i}" style="margin-top:10px; background:#d43f3f; color:#fff; border:none; padding:6px 12px; border-radius:5px; cursor:pointer;">
+        Delete
+      </button>
+
         `;
         list.appendChild(li);
       });
+
+
+       // Attach delete listeners after rendering
+  document.querySelectorAll('.delete-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.getAttribute('data-index'), 10);
+      const appt = filtered[idx];
+
+      if (confirm(`Delete appointment for ${appt.name} on ${appt.date} at ${appt.time}?`)) {
+        // Remove from global appointments array by finding matching object
+        const globalIndex = appointments.findIndex(a =>
+          a.name === appt.name &&
+          a.date === appt.date &&
+          a.time === appt.time &&
+          a.location === appt.location
+        );
+        if (globalIndex > -1) {
+          appointments.splice(globalIndex, 1);
+          localStorage.setItem('appointments', JSON.stringify(appointments));
+          renderAppointments(); // re-render list
+        }
+      }
+    });
+  });
+}
+
+// Export appointments to CSV
+function exportToCSV() {
+  if (appointments.length === 0) {
+    alert('No appointments to export!');
+    return;
+  }
+
+  const header = ['Name', 'Email', 'Phone', 'Notes', 'Location', 'Barber', 'Date', 'Time'];
+  const csvRows = [];
+
+  // Add header row
+  csvRows.push(header.join(','));
+
+  // Add data rows
+  appointments.forEach(appt => {
+    const row = [
+      `"${appt.name}"`,
+      `"${appt.email}"`,
+      `"${appt.phone}"`,
+      `"${(appt.notes || '').replace(/"/g, '""')}"`,
+      `"${appt.location}"`,
+      `"${appt.barber}"`,
+      `"${appt.date}"`,
+      `"${appt.time}"`
+    ];
+    csvRows.push(row.join(','));
+  });
+
+  const csvString = csvRows.join('\n');
+  const blob = new Blob([csvString], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'appointments.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+
+
+
+
+
+
     }
 
     // Initial render
@@ -138,6 +272,8 @@
     // Event listeners
     locationFilter.addEventListener('change', renderAppointments);
     searchInput.addEventListener('input', renderAppointments);
+    sortSelect.addEventListener('change', renderAppointments);
+    exportBtn.addEventListener('click', exportToCSV);
   </script>
 </body>
 </html>
