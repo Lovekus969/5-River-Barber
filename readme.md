@@ -35,6 +35,18 @@ We have  successfully completer owner page which is hidden once owner press ctrl
 The prompt happens client-side — anyone can bypass it.
 JavaScript is easy to manipulate or disable.
 The page content is already loaded even before password verification completes.
+This is the function which cheack the validation and we place it on top of script 
+// (function checkPassword() {
+  const correctPassword = '@1313'; // This is my actual  password
+
+  let entered = prompt("Enter Owner Password:");
+
+  if (entered !== correctPassword) {
+    alert("Wrong password! Redirecting...");
+    window.location.href = 'index.html';  // Redirect to homepage or login page
+  }
+})();
+
 
 --------------------------------------------------------------------PROBLEMS --------------------------------------------------------------------------
         View more button when we laying down the images its not working . [ Solved Problem ] we fixed the inline js to set view more button  _------------------------- I applies internal inline js which works need to cheack file too much bugs inside due to the precedence of slector it was not working 
