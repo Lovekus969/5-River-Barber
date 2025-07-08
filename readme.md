@@ -1,20 +1,4 @@
-next step and before finalizing this web 
-Quick checklist before going live:
-✅ Double-check responsiveness on mobile & desktop
-
-✅ Optimize images & assets for fast loading
-
-✅ Test all forms (booking, owner login, etc.) thoroughly
-
-✅ Secure sensitive data (e.g., owner panel) — maybe add simple password protection or basic auth for now
-
-✅ Use a reliable hosting platform (Netlify, Vercel, GitHub Pages for frontend, or something like Heroku for backend)
-
-✅ Connect a custom domain if you have one (makes it look pro)
-
-✅ Set up HTTPS (most hosts provide free SSL now)
-
-✅ Backup  code & assets (GitHub is perfect for this)
+Problem found which is that our code can be easilty get hacked instead of what we use the online tool for the java script which makes our sccript so confusing just like a hacker code and i think so far it can be reveserable if so then GAIN  we get in truble but first we goona to make this problem fix so that ono third party can come to hacked our code i dont wanna that the  code can be steal so just applied another file inside the js file 
 
 Pending work 
 payment method is pending , submition method need to make so tat appointment can not directly comes fisrt proper see the website then say if user want to book 
