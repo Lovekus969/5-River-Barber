@@ -27,6 +27,15 @@ We have  successfully completer owner page which is hidden once owner press ctrl
 // problem found after pressing the wrong password page still get opened why if the password is inncorect it shoud redirect to main index dfile leets look out /
  Problem find promt not handle the main page direclty it need to be fully protectected insted of getting wrong passwod it still open the owner page which is lol 
 
+ 
+ 
+ How to fix the security issue and prevent access if password is wrong after some search what i found .................................................
+ currently using prompt() in JavaScript to ask for a password on page load, that is inherently insecure because:
+
+The prompt happens client-side — anyone can bypass it.
+JavaScript is easy to manipulate or disable.
+The page content is already loaded even before password verification completes.
+
 --------------------------------------------------------------------PROBLEMS --------------------------------------------------------------------------
         View more button when we laying down the images its not working . [ Solved Problem ] we fixed the inline js to set view more button  _------------------------- I applies internal inline js which works need to cheack file too much bugs inside due to the precedence of slector it was not working 
         
