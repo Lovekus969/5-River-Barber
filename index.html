@@ -74,31 +74,14 @@ You <!DOCTYPE html>
   </a>
 </section>
 
-    <!-- Barber and Booking Info -->
-    <label for="barber-select">Choose a Barber:</label>
-    <select id="barber-select" name="barber" required>
-      <option value="">-- Select a Barber --</option>
-      <option value="Jass">Barber 1 - Jass</option>
-      <option value="Gurbir">Barber 2 - Gurbir</option>
-      <option value="Vishal">Barber 3 - Vishal</option>
-      <option value="Sahil">Barber 4 - Sahil Mall</option>
-      <option value="Rahul">Barber 5 - Rahul</option>
-      <option value="Manish">Barber 6 - Manish</option>
-      <option value="Ravi">Barber 7 - Ravi</option>
-    </select>
-
-    <label for="appointment-date">Choose a Date:</label>
-    <input type="date" id="appointment-date" name="appointment-date" required>
-
-    <label for="appointment-time">Choose a Time:</label>
-    <input type="time" id="appointment-time" name="appointment-time" required>
-
-    <!-- Form Buttons -->
-    <button type="submit">Book Appointment</button>
-    <button type="reset">Reset</button>
-  </form>
+<!-- login pannel to avoid prompt minor mistakes to handle password correction securly  -->
+<div id="owner-login-panel" style="display:none; position:fixed; top:30%; left:50%; transform:translateX(-50%);
+  background:#222; padding:20px; border-radius:10px; box-shadow:0 0 10px #d4af37; z-index:999;">
+  <h3 style="color:#ffcb47;">Owner Login</h3>
+  <input type="password" id="owner-password-input" placeholder="Enter password" style="padding:8px; width:100%; margin-bottom:10px;" />
+  <button id="owner-login-btn" style="padding:8px 12px; background:#ffcb47; border:none; cursor:pointer;color: #000000; font-weight:bold;">Login</button>
+  <p id="login-error" style="color:red; display:none; margin-top:10px;">Incorrect password, try again.</p>
 </div>
-
         
 
     <!-- Services Section -->
