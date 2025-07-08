@@ -32,6 +32,8 @@ We have  successfully completer owner page which is hidden once owner press ctrl
  How to fix the security issue and prevent access if password is wrong after some search what i found .................................................
  currently using prompt() in JavaScript to ask for a password on page load, that is inherently insecure because:
 
+ éé issue fixed here we jsut fix it by using the user login mannual page and puting the password file inside the js file 
+
 The prompt happens client-side — anyone can bypass it.
 JavaScript is easy to manipulate or disable.
 The page content is already loaded even before password verification completes.
