@@ -1043,5 +1043,133 @@ section p {
 }
 
 
+/* For message */
+#hover-message {
+  font-size: 16px;
+  color: #ffcb47;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-align: center;
+}
+
+#hover-message.visible {
+  opacity: 1;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* Sidebar Menu Icon */
+/* Sidebar base */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  height: 100vh;
+  background-color: #1a1a1a;
+  padding-top: 80px;
+  z-index: 1000;
+  overflow-y: auto;
+  /* Hide scrollbar for neatness */
+  scrollbar-width: none; /* Firefox */
+}
+.sidebar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* Show sidebar with animation */
+.sidebar.show {
+  right: 0;
+  animation: slideInVolume 0.5s ease forwards;
+}
+
+/* Sidebar list styling */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  display: block;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+  opacity: 0;
+  display: block;
+  transform: translateX(50px);
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+/* Animate each list item in sequence */
+.sidebar.show ul li:nth-child(1) {
+  animation: fadeSlideIn 0.4s 0.1s forwards;
+}
+.sidebar.show ul li:nth-child(2) {
+  animation: fadeSlideIn 0.4s 0.2s forwards;
+}
+.sidebar.show ul li:nth-child(3) {
+  animation: fadeSlideIn 0.4s 0.3s forwards;
+}
+.sidebar.show ul li:nth-child(4) {
+  animation: fadeSlideIn 0.4s 0.4s forwards;
+}
+.sidebar.show ul li:nth-child(5) {
+  animation: fadeSlideIn 0.4s 0.5s forwards;
+}
+.sidebar.show ul li:nth-child(6) {
+  animation: fadeSlideIn 0.4s 0.6s forwards;
+}
+
+/* Animation Keyframes */
+@keyframes slideInVolume {
+  0% {
+    right: -100%;
+    opacity: 0;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Sidebar link styling */
+.sidebar ul li a {
+  display: block;         /* Make links take full width */
+  padding: 12px 20px;     /* Padding inside links */
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  text-align: left; 
+}
+
+.sidebar ul li a:hover {
+  background-color: #ffcb47;
+  color: #111;
+}
+
+/* Hide desktop nav and show dots on mobile */
+@media (max-width: 425px) {
+  .nav-links {
+    display: none;
+  }
+  .menu-dots {
+    display: block;
+  }
+}
+
 
       
