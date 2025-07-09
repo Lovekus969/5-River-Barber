@@ -5,6 +5,9 @@ payment method is pending , submition method need to make so tat appointment can
 appointment then go to appointment section otherwise dont jsut through here and there criosity to explore more we need to be here .
 page pending : Modern style ... add some rates of the updated hair cut here .
 
+<img width="669" alt="image" src="https://github.com/user-attachments/assets/521cc274-6617-45ab-b61d-0af585c5abb4" />
+
+
 
 ...................work completed by today -------------------
 We have  successfully completer owner page which is hidden once owner press ctrl + alt +_ o the psge is gonna open secretly .
