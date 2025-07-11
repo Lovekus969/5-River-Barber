@@ -38,14 +38,19 @@
       min-height: 100vh;
     }
 
-    main {
-      flex: 1;
-      padding: 100px 20px 60px;
-      background-color: rgba(0, 0, 0, 0.6);
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
+   main {
+  flex: 1;
+  padding: 100px 20px 60px;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
 
     h1 {
       font-size: 3rem;
@@ -94,13 +99,16 @@
       100% { transform: translateY(-10px); }
     }
 
-    .appointment-form {
-      margin-top: 50px;
-      padding: 20px;
-      background-color: rgba(20, 20, 20, 0.7);
-      border-radius: 10px;
-      text-align: left;
-    }
+   .appointment-form {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: rgba(20, 20, 20, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
 
     .appointment-form label {
       display: block;
@@ -178,33 +186,10 @@
       <p><strong>Bring your kids in for a haircut they'll love! Book an appointment today!</strong></p>
 
       <div class="falling-text">Bright smiles and fresh styles for your little ones!</div>
-      <a href="#book" class="cta-button">Book Now</a>
+      <a href="booking.html" class="cta-button">Book Now</a>
 
-      <div id="book" class="appointment-form">
-        <h2>Book an Appointment</h2>
-        <form action="submit-booking.php" method="POST">
-          <label for="name">Child's Full Name:</label>
-          <input type="text" id="name" name="name" required>
 
-          <label for="barber">Choose Your Barber:</label>
-          <select id="barber" name="barber" required>
-            <option value="Jass">Barber 1 - Jass</option>
-            <option value="Gurbir">Barber 2 - Gurbir</option>
-            <option value="Vishal">Barber 3 - Vishal</option>
-            <option value="Sahil">Barber 4 - Sahil Mall</option>
-            <option value="Rahul">Barber 5 - Rahul</option>
-            <option value="Manish">Barber 6 - Manish</option>
-            <option value="Ravi">Barber 7 - Ravi</option>
-          </select>
-
-          <label for="date">Preferred Appointment Date:</label>
-          <input type="date" id="date" name="date" required>
-
-          <label for="time">Preferred Appointment Time:</label>
-          <input type="time" id="time" name="time" required>
-
-          <button type="submit">Submit Appointment</button>
-        </form>
+         
       </div>
     </main>
 
