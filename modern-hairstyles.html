@@ -1,147 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Hairstyles - 5 River Barbers</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background: url(modern.jpg) no-repeat center center fixed;
-            background-size: cover;
-            color: #ffffff;
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            overflow-x: hidden;
-        }
-        .container {
-            padding: 50px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3rem;
-            color: #ffcb47;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-            animation: slideIn 1s ease-out;
-        }
-        p {
-            font-size: 1.2rem;
-            color: #cccccc;
-            animation: fadeIn 2s ease-in-out;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 20px 0;
-            animation: fadeIn 2s ease-in-out;
-        }
-        li {
-            font-size: 1.1rem;
-            margin: 10px 0;
-            transition: transform 0.3s;
-        }
-        li:hover {
-            transform: rotateY(15deg);
-            color: #ffcb47;
-        }
-        a.back-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #ffcb47;
-            color: #0f0f0f;
-            text-decoration: none;
-            font-size: 1.1rem;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            animation: zoomIn 1s ease-in-out;
-        }
-        a.back-link:hover {
-            background-color: #e68a00;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modern Hairstyles - 5 River Barbers</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+   html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 
-        /* 3D Animation Effects */
-        @keyframes slideIn {
-            from {
-                transform: translateX(-100%);
-            }
-            to {
-                transform: translateX(0);
-            }
-        }
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+    url(modern.jpg) no-repeat center center;
+  background-size: cover;
+  min-height: 100vh; /* ensures at least viewport height */
+}
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+.container {
+  max-width: 960px;
+  margin: 40px auto 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
 
-        @keyframes zoomIn {
-            from {
-                transform: scale(0.5);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
+h1, h2 {
+  color: #ffcb47;
+  margin-bottom: 20px;
+}
 
-        /* Card Style for Each Service */
-        .service-card {
-            display: inline-block;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 30px;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-            width: 250px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+p {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
-        }
+.service-card {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  margin: 15px;
+  border-radius: 10px;
+  width: 250px;
+  display: inline-block;
+  vertical-align: top;
+  transition: transform 0.3s;
+}
 
-        .service-card h3 {
-            color: #ffcb47;
-            font-size: 1.5rem;
-        }
+.service-card:hover {
+  transform: scale(1.05);
+}
 
-        .service-card p {
-            color: #cccccc;
-        }
-    </style>
+.service-card h3 {
+  color: #ffcb47;
+  margin-bottom: 10px;
+}
+
+.btns {
+  margin-top: 30px;
+}
+
+.btns a {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 10px;
+  background-color: #ffcb47;
+  color: #0f0f0f;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.btns a:hover {
+  background-color: #e68a00;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.gallery img {
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  background: #111;
+  padding: 40px 20px;
+  color: #aaa;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+footer h2, footer h3 {
+  color: #d4af37;
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+footer img {
+  width: 32px;
+  height: 32px;
+  margin: 0 8px;
+  vertical-align: middle;
+}
+
+.back-to-top {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #000000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .service-card, .gallery img {
+    width: 90%;
+    margin: 10px auto;
+    display: block;
+  }
+
+  .gallery {
+    gap: 10px;
+  }
+}
+
+/* Gallery hidden images */
+.hidden {
+  display: none;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gallery-img {
+  width: 30%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, opacity 0.6s ease;
+  opacity: 1;
+}
+
+.gallery-img.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade-in animation */
+.fade-in {
+  animation: fadeInImage 0.6s ease forwards;
+}
+
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Modern Hairstyles</h1>
-        <p>Stay on trend with our stylish modern hairstyles. Whether you're after a fade, undercut, or a creative look, our barbers will give you a sharp, contemporary cut.</p>
-        <h2>Services Offered:</h2>
-        <div class="service-cards">
-            <div class="service-card">
-                <h3>Undercut</h3>
-                <p>A versatile style, the undercut gives you clean sides and top flexibility. It's perfect for a bold, modern look.</p>
-            </div>
-            <div class="service-card">
-                <h3>Fades</h3>
-                <p>The fade offers a smooth transition between different hair lengths, sleek finish that looks fresh and edgy.</p>
-            </div>
-            <div class="service-card">
-                <h3>Pompadour</h3>
-                <p>Classic yet modern, the pompadour adds volume and height to your hair, giving you a refined and stylish appearance.</p>
-            </div>
-            <div class="service-card">
-                <h3>Textured Cuts</h3>
-                <p>Ideal for adding movement and shape to your hair, textured cuts give you a relaxed yet trendy vibe, perfect for any occasion.</p>
-            </div>
-        </div>
-        <p>Transform your look with our modern styles. Book an appointment now and let us help you achieve your perfect haircut!</p>
-        <a href="index.html" class="back-link">Back to Services</a>
+
+  <div class="container">
+    <h1>Modern Hairstyles</h1>
+    <p>Sharp. Fresh. Trendy. Get the most modern styles made to fit your vibe.</p>
+
+    <div class="service-card">
+      <h3>Undercut</h3>
+      <p>Clean sides. Volume on top. A bold, modern vibe.</p>
     </div>
+    <div class="service-card">
+      <h3>Fades</h3>
+      <p>From skin fade to taper. Smooth and fresh.</p>
+    </div>
+    <div class="service-card">
+      <h3>Pompadour</h3>
+      <p>Old-school volume with new-school shape.</p>
+    </div>
+    <div class="service-card">
+      <h3>Textured Cuts</h3>
+      <p>Messy, layered, light — effortless and cool.</p>
+    </div>
+
+    <p>Let your hair speak loud. Book your modern cut today.</p>
+
+    <div class="btns">
+      <a href="booking.html">Book Now</a>
+      <a href="index.html">Back to Services</a>
+    </div>
+  </div>
+
+  <section id="gallery">
+    <h2>Our Work</h2>
+
+    <div class="gallery-grid">
+      <!-- Initially visible images -->
+      <img class="gallery-img" src="Images/img1.jpg" alt="Style 1" />
+      <img class="gallery-img" src="Images/IMG2.jpg" alt="Style 2" />
+      <img class="gallery-img" src="Images/IMG3.jpg" alt="Style 3" />
+
+      <!-- Hidden by default -->
+      <img class="gallery-img hidden" src="Images/IMG4.jpg" alt="Style 4" />
+      <img class="gallery-img hidden" src="Images/IMG5.jpg" alt="Style 5" />
+      <img class="gallery-img hidden" src="Images/IMG6.jpg" alt="Style 6" />
+      <img class="gallery-img hidden" src="Images/IMG7.jpg" alt="Style 7" />
+      <img class="gallery-img hidden" src="Images/IMG8.jpg" alt="Style 8" />
+      <img class="gallery-img hidden" src="Images/IMG9.jpg" alt="Style 9" />
+      <img class="gallery-img hidden" src="Images/IMG10.jpg" alt="Style 10" />
+      <img class="gallery-img hidden" src="Images/IMG11.jpg" alt="Style 11" />
+      <img class="gallery-img hidden" src="Images/IMG12.jpg" alt="Style 12" />
+      <img class="gallery-img hidden" src="Images/IMG13.jpg" alt="Style 13" />
+      <img class="gallery-img hidden" src="Images/IMG14.jpg" alt="Style 14" />
+      <img class="gallery-img hidden" src="Images/IMG15.jpg" alt="Style 15" />
+    </div>
+
+    <button id="toggle-gallery">View More</button>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const button = document.getElementById("toggle-gallery");
+      const allImages = document.querySelectorAll(".gallery-img.hidden");
+      let currentBatch = 0;
+      let clickCount = 0;
+
+      button.addEventListener("click", () => {
+        clickCount++;
+        let imagesToShow = clickCount <= 2 ? 3 : 5;
+        let start = currentBatch;
+        let end = currentBatch + imagesToShow;
+
+        for (let i = start; i < end && i < allImages.length; i++) {
+          allImages[i].classList.remove("hidden");
+          allImages[i].classList.add("fade-in");
+        }
+
+        currentBatch += imagesToShow;
+
+        if (currentBatch >= allImages.length) {
+          button.style.display = "none";
+        }
+      });
+    });
+  </script>
+
+  <footer>
+    <div>
+      <h2>📍 Olivia Marie Gardens</h2>
+      <p>20 Sky Harbour Dr, Brampton, ON</p>
+      <p><a href="tel:9054600999">(905) 460-0999</a></p>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <h2>📍 Main Street</h2>
+      <p>332 Main St N, Brampton, ON</p>
+      <p><a href="tel:9059569544">(905) 956-9544</a></p>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <h3>Follow Us</h3>
+      <a href="https://www.tiktok.com/@5riversbarbershop" target="_blank">
+        <img src="Images/tik-tok.jpg" alt="TikTok" />
+      </a>
+      <a href="https://www.instagram.com/5rivers_barbershop/" target="_blank">
+        <img src="Images/insta.jpg" alt="Instagram" />
+      </a>
+    </div>
+
+    <p style="margin-top: 20px;">
+      &copy; 2025 5 Rivers Barbers. Made by 
+      <a href="https://www.linkedin.com/in/bhavneet-bhavneet-300998295/" target="_blank">Kush</a>
+    </p>
+
+    <a href="index.html" class="back-to-top">⬆ Back to Home</a>
+  </footer>
+
 </body>
 </html>
