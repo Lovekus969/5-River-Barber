@@ -1,6 +1,8 @@
 
 Another problem get found that the script of opening the owner page is now not working ( Under the trap) .--------------- 
-Verified and approved itas get fixed now we are able to proceed through login page and by putting owner passcode it works i have alredy passed some test case in it . Its part of journey faliour is part of success. Also script of verification now come oviously they conncect each other 
+Verified and approved itas get fixed now we are able to proceed through login page and by putting owner passcode it works i have alredy passed some test case in it . Its part of journey faliour is part of success. Also script of verification now come oviously they conncect each other.
+
+Whats next plan 
 Problem found which is that our code can be easilty get hacked instead of what we use the online tool for the java script which makes our sccript so confusing just like a hacker code and i think so far it can be reveserable if so then GAIN  we get in truble but first we goona to make this problem fix so that ono third party can come to hacked our code i dont wanna that the  code can be steal so just applied another file inside the js file 
 
 Pending work 
@@ -38,6 +40,7 @@ This is the function which cheack the validation and we place it on top of scrip
     window.location.href = 'index.html';  // Redirect to homepage or login page
   }
 })();
+
 
 
 --------------------------------------------------------------------PROBLEMS --------------------------------------------------------------------------
