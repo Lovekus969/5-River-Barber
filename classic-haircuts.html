@@ -1,91 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic Haircuts - 5 River Barbers</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background: url(equipment2.jpg) no-repeat center center fixed;
-            background-size: cover;
-            color: #ffffff;
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-        }
-        .container {
-            padding: 50px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3rem;
-            color: #ffcb47;
-        }
-        p {
-            font-size: 1.2rem;
-            color: #cccccc;
-        }
-        a.back-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #ffcb47;
-            color: #0f0f0f;
-            text-decoration: none;
-            font-size: 1.1rem;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        a.back-link:hover {
-            background-color: #e68a00;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classic Haircuts - 5 River Barbers</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url(equipment2.jpg) no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      position: relative;
+    }
+
+    /* Dark overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    .container {
+      padding: 50px 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ffcb47;
+    }
+
+    h2 {
+      color: #ffcb47;
+      margin-top: 40px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
+
+    ul {
+      text-align: left;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+
+    li {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    a.back-link {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 24px;
+      background-color: #ffcb47;
+      color: #0f0f0f;
+      text-decoration: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    a.back-link:hover {
+      background-color: #e68a00;
+    }
+
+    .book-now-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #ffffff;
+      color: #000000;
+      font-weight: bold;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .book-now-btn:hover {
+      background-color: #ffcb47;
+      color: #0f0f0f;
+    }
+
+    footer.footer {
+      margin-top: 60px;
+      padding: 20px;
+      text-align: center;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .container {
+        padding: 30px 15px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <section id="classic-haircuts" class="classic-haircuts">
+    <div class="container">
+      <h1>Classic Haircuts</h1>
+      <p>Our classic haircuts offer timeless styles that are perfect for any occasion. Whether you want a simple trim or a more traditional cut, our experienced barbers will ensure you leave looking sharp.</p>
 
-    <section id="classic-haircuts" class="classic-haircuts">
-        <div class="container">
-            <h1>Classic Haircuts</h1>
-            <p>Our classic haircuts offer timeless styles that are perfect for any occasion. Whether you want a simple trim or a more traditional cut, our experienced barbers will ensure you leave looking sharp.</p>
+      <h2>Why Choose a Classic Haircut?</h2>
+      <p>Classic haircuts offer the perfect balance of elegance and simplicity. They're versatile, easy to maintain, and always in style. Whether you’re looking for something sleek and polished, or a rugged, textured style, our barbers will help you choose the perfect cut to suit your face shape, lifestyle, and personal taste.</p>
 
-            <h2>Why Choose a Classic Haircut?</h2>
-            <p>Classic haircuts offer the perfect balance of elegance and simplicity. They're versatile, easy to maintain, and always in style. Whether you’re looking for something sleek and polished, or a rugged, textured style, our barbers will help you choose the perfect cut to suit your face shape, lifestyle, and personal taste.</p>
+      <h2>Our Expertise in Classic Styles</h2>
+      <ul>
+        <li><strong>Men’s Classic Cut:</strong> A traditional, sharp look that works for both professional and casual settings.</li>
+        <li><strong>Fades and Tapers:</strong> The perfect blend of modern and classic styles, offering a clean, fresh finish.</li>
+        <li><strong>Pompador:</strong> For those who want to add volume and style to their look, this timeless cut has an undeniable appeal.</li>
+        <li><strong>Buzz Cuts:</strong> Low-maintenance and effortlessly stylish, this cut is perfect for those who like to keep things simple.</li>
+        <li><strong>Side Parting:</strong> A clean, neat look that never goes out of style, with a sharp part to complement any face shape.</li>
+      </ul>
 
-            <h2>Our Expertise in Classic Styles</h2>
-            <p>We specialize in a range of classic haircuts that have stood the test of time. Here are some of the popular options we offer:</p>
-            <ul>
-                <li><strong>Men’s Classic Cut:</strong> A traditional, sharp look that works for both professional and casual settings.</li>
-                <li><strong>Fades and Tapers:</strong> The perfect blend of modern and classic styles, offering a clean, fresh finish.</li>
-                <li><strong>Pompador:</strong> For those who want to add volume and style to their look, this timeless cut has an undeniable appeal.</li>
-                <li><strong>Buzz Cuts:</strong> Low-maintenance and effortlessly stylish, this cut is perfect for those who like to keep things simple.</li>
-                <li><strong>Side Parting:</strong> A clean, neat look that never goes out of style, with a sharp part to complement any face shape.</li>
-            </ul>
+      <h2>Our Process</h2>
+      <p>At 5 River Barbers, we take the time to consult with you before starting your haircut to ensure we understand your preferences. Our barbers will guide you through the options and make suggestions based on your hair type, face shape, and lifestyle. Whether you want a precise, tailored look or something more relaxed, we ensure every detail is perfect.</p>
 
-            <h2>Our Process</h2>
-            <p>At 5 River Barbers, we take the time to consult with you before starting your haircut to ensure we understand your preferences. Our barbers will guide you through the options and make suggestions based on your hair type, face shape, and lifestyle. Whether you want a precise, tailored look or something more relaxed, we ensure every detail is perfect.</p>
+      <h2>Quality and Precision</h2>
+      <p>We use only high-quality products that are gentle on your hair and scalp. From our cutting tools to styling products, we ensure that your haircut not only looks great but lasts longer. Whether you're looking for a sharp edge or a soft, natural finish, we provide a flawless experience every time.</p>
 
-            <h2>Quality and Precision</h2>
-            <p>We use only high-quality products that are gentle on your hair and scalp. From our cutting tools to styling products, we ensure that your haircut not only looks great but lasts longer. Whether you're looking for a sharp edge or a soft, natural finish, we provide a flawless experience every time.</p>
+      <h2>Book Your Classic Cut Today</h2>
+      <p>Ready to get the perfect classic haircut? Book an appointment at <strong>5 River Barbers</strong> today and experience the quality and precision that sets us apart.</p>
 
-            <h2>Book Your Classic Cut Today</h2>
-            <p>Ready to get the perfect classic haircut? Book an appointment at <strong>5 River Barbers</strong> today and experience the quality and precision that sets us apart. No matter the occasion, we’ll ensure you leave feeling your best.</p>
+      <a href="booking.html" class="book-now-btn">Book Now</a><br />
+      <a href="index.html" class="back-link">Back to Services</a>
+    </div>
+  </section>
 
-            <h2>Additional Services We Offer</h2>
-            <ul>
-                <li><strong>Beard Grooming:</strong> Keep your facial hair sharp and well-maintained with our expert beard trims.</li>
-                <li><strong>Hot Towel Shaves:</strong> Treat yourself to a luxurious hot towel shave for the ultimate grooming experience.</li>
-                <li><strong>Modern Hairstyles:</strong> If you’re after something a bit more trendy, we can help you achieve a modern look with precision cuts.</li>
-            </ul>
+  <!-- Footer Section -->
+   <!-- Footer Section -->
+<footer class="footer" id="footer-section">
+  <div class="container">
+  
+    <div class="shop-location" id="contact">
+      <h2 style="color: #d4af37;">Contact Us</h2>
+      <p>Email: <a href="mailto:info@5riverbarbers.com" style="color: #d4af37;">info@5riverbarbers.com</a></p>
+     
+      <p><strong>📍 Olivia Marie Gardens</strong></p>
+      <p>In plaza side, 20 Sky Harbour Dr, Brampton, ON L6Y 0V7</p>
+      <p><i class="fas fa-phone-alt"></i> <a href="tel:9054600999">(905) 460-0999</a></p>
+    </div>
 
-            <a href="index.html" class="back-link">Back to Services</a>
-        </div>
-    </section>
+    <div class="shop-location">
+      <p><strong>📍 Main Street</strong></p>
+      <p>332 Main St N, Brampton, ON L6V 1P8</p>
+      <p><i class="fas fa-phone-alt"></i> <a href="tel:9059569544">(905) 956-9544</a></p>
+    </div>
+     <!-- Social Media Links -->
+     <div class="social-links" style="margin-top: 20px;">
+      <h3 style="color: #fff;">Follow Us</h3>
+      <a href="https://www.tiktok.com/@5riversbarbershop" target="_blank" style="margin-right: 15px;">
+        <img src="Images/tik-tok.jpg" alt="TikTok" style="width: 32px; height: 32px;">
+      </a>
+      <a href="https://www.instagram.com/5rivers_barbershop/" target="_blank">
+        <img src="Images/insta.jpg" alt="Instagram" style="width: 32px; height: 32px;">
+      </a>
+    </div>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 5 River Barbers. All rights reserved.</p>
-        </div>
-    </footer>
+    <p>
+  &copy; 2025 5 Rivers Barbers. All rights reserved. 
+  Made by <a href="https://www.linkedin.com/in/bhavneet-bhavneet-300998295/" target="_blank" style="color: rgb(8, 112, 181);">Kush</a>
+</p>
+
+    <a href="index.html" class="back-to-top" style="color: black;">⬆ Back to Home</a>
+
+  </div>
+  <button id="magic-btn" style="width: 50px; height: 50px; right: 100px;border-radius: 50%; background: #333331; border: none; cursor: pointer; margin-top: 20px;" title="Click for magic!">🎨</button>
+
+
+</footer>
 </body>
 </html>
