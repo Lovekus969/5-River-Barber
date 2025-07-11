@@ -1,3 +1,4 @@
+Fixing all the details in the service section which i not update form the last 6 mont lets work on it . 
 
 Another problem get found that the script of opening the owner page is now not working ( Under the trap) .--------------- 
 Verified and approved itas get fixed now we are able to proceed through login page and by putting owner passcode it works i have alredy passed some test case in it . Its part of journey faliour is part of success. Also script of verification now come oviously they conncect each other.
