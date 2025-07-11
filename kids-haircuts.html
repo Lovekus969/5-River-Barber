@@ -1,246 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kids' Haircuts - 5 River Barbers</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Global Styles */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: 'Poppins', sans-serif;
-            background: url('kid.jpeg') no-repeat center center fixed;
-            background-size: cover;
-            overflow-y: auto; /* Allow scrolling */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Ensure content is spread out */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kids' Haircuts - 5 River Barbers</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .container {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 100px 20px;
-            color: #ffffff;
-            flex-grow: 1; /* Allow this to take up available space */
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: #000;
+    }
 
-        h1 {
-            font-size: 4rem;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            color: #2c2c2c; /* Darker text color */
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
-        }
+    /* Background behind everything */
+    .page-wrapper::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('kid.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -1;
+      filter: brightness(0.5);
+    }
 
-        h2 {
-            font-size: 2rem;
-            color: #2c2c2c; /* Darker text color */
-            margin-top: 20px;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
-        }
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-        .falling-text {
-            font-size: 1.5rem;
-            color: #ffcb47;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-            animation: bounceText 2s ease-out infinite;
-            display: inline-block;
-            margin-top: 30px;
-        }
+    main {
+      flex: 1;
+      padding: 100px 20px 60px;
+      background-color: rgba(0, 0, 0, 0.6);
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
 
-        @keyframes bounceText {
-            0% {
-                transform: translateY(-10px);
-            }
-            50% {
-                transform: translateY(10px);
-            }
-            100% {
-                transform: translateY(-10px);
-            }
-        }
+    h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      color: #f3c702;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    }
 
-        .cta-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #ffcb47;
-            color: #000;
-            font-size: 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 30px;
-            transition: background-color 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
-        }
+    h2 {
+      font-size: 2rem;
+      color: #ffdb0c;
+      margin-top: 20px;
+    }
 
-        .cta-button:hover {
-            background-color: #e68a00;
-        }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
 
-        /* Appointment Form */
-        .appointment-form {
-            margin-top: 50px;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-        }
+    .cta-button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background-color: #ffcb47;
+      color: #000;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 6px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+      display: inline-block;
+    }
 
-        .appointment-form label {
-            font-size: 1.2rem;
-            color: #ffffff;
-            display: block;
-            margin-bottom: 10px;
-        }
+    .cta-button:hover {
+      background-color: #e68a00;
+    }
 
-        .appointment-form input, .appointment-form select, .appointment-form button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ffcb47;
-            background-color:   #333;
-            color: #ffffff;
-        }
+    .falling-text {
+      margin-top: 30px;
+      color: #ffcb47;
+      font-size: 1.3rem;
+      animation: bounceText 2s ease-out infinite;
+    }
 
-        .appointment-form button {
-            background-color: #ffcb47;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
+    @keyframes bounceText {
+      0% { transform: translateY(-10px); }
+      50% { transform: translateY(10px); }
+      100% { transform: translateY(-10px); }
+    }
 
-        .appointment-form button:hover {
-            background-color: #e68a00;
-        }
+    .appointment-form {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: rgba(20, 20, 20, 0.7);
+      border-radius: 10px;
+      text-align: left;
+    }
 
-        /* Back to Home Button */
-        .back-to-home-btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #ffcb47;
-            color: #0f0f0f;
-            font-size: 1.5rem;
-            border-radius: 50px;  /* Round the button */
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 30px;  /* Space from bottom */
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
-            align-self: center; /* Center horizontally */
-        }
+    .appointment-form label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 600;
+    }
 
-        .back-to-home-btn:hover {
-            background-color: #e68a00;
-            transform: translateY(-5px); /* 3D lift effect */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);  /* Enhanced shadow for 3D effect */
-        }
+    .appointment-form input,
+    .appointment-form select,
+    .appointment-form button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ffcb47;
+      background-color: #333;
+      color: #fff;
+    }
 
-        .back-to-home-btn:active {
-            transform: translateY(2px); /* Button sinks when clicked */
-        }
+    .appointment-form button {
+      background-color: #ffcb47;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-        /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
+    .appointment-form button:hover {
+      background-color: #e68a00;
+    }
 
-            .cta-button {
-                font-size: 1.2rem;
-                padding: 10px 20px;
-            }
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-            .falling-text {
-                font-size: 1.2rem;
-            }
+    footer h2, footer h3 {
+      color: #d4af37;
+    }
 
-            .appointment-form {
-                padding: 15px;
-            }
+    footer a {
+      color: #d4af37;
+      text-decoration: none;
+    }
 
-            .back-to-home-btn {
-                font-size: 1.2rem;
-                padding: 10px 20px;
-            }
-        }
+    footer img {
+      width: 32px;
+      height: 32px;
+      margin: 0 8px;
+    }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8rem;
-            }
+    .back-to-top {
+      display: inline-block;
+      margin-top: 20px;
+      color: #fff;
+    }
 
-            h2 {
-                font-size: 1.5rem;
-            }
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.5rem; }
+    }
 
-            .cta-button {
-                font-size: 1rem;
-                padding: 8px 15px;
-            }
-
-            .appointment-form {
-                padding: 10px;
-            }
-
-            .back-to-home-btn {
-                font-size: 1rem;
-                padding: 8px 15px;
-            }
-        }
-    </style>
+    @media (max-width: 480px) {
+      h1 { font-size: 1.7rem; }
+    }
+  </style>
 </head>
 <body>
+  <div class="page-wrapper">
+    <main>
+      <h1>Kids' Haircuts</h1>
+      <p>We offer gentle and fun haircuts for kids. Our barbers are skilled at working with younger clients to ensure they leave with a smile and a great haircut!</p>
+      <h2>Services Offered:</h2>
+      <p><strong>Bring your kids in for a haircut they'll love! Book an appointment today!</strong></p>
 
-    <div class="container">
-        <h1><b>Kids' Haircuts</b></h1>
-        <p>We offer gentle and fun haircuts for kids. Our barbers are skilled at working with younger clients to ensure they leave with a smile and a great haircut!</p>
+      <div class="falling-text">Bright smiles and fresh styles for your little ones!</div>
+      <a href="#book" class="cta-button">Book Now</a>
 
-        <h2>Services Offered:</h2>
-        
+      <div id="book" class="appointment-form">
+        <h2>Book an Appointment</h2>
+        <form action="submit-booking.php" method="POST">
+          <label for="name">Child's Full Name:</label>
+          <input type="text" id="name" name="name" required>
 
-        <p>Bring your kids in for a haircut they'll love! Book an appointment today!</p>
+          <label for="barber">Choose Your Barber:</label>
+          <select id="barber" name="barber" required>
+            <option value="Jass">Barber 1 - Jass</option>
+            <option value="Gurbir">Barber 2 - Gurbir</option>
+            <option value="Vishal">Barber 3 - Vishal</option>
+            <option value="Sahil">Barber 4 - Sahil Mall</option>
+            <option value="Rahul">Barber 5 - Rahul</option>
+            <option value="Manish">Barber 6 - Manish</option>
+            <option value="Ravi">Barber 7 - Ravi</option>
+          </select>
 
-        <div class="falling-text">
-            <p>Bright smiles and fresh styles for your little ones!</p>
-        </div>
+          <label for="date">Preferred Appointment Date:</label>
+          <input type="date" id="date" name="date" required>
 
-        <a href="#book" class="cta-button">Book Now</a>
+          <label for="time">Preferred Appointment Time:</label>
+          <input type="time" id="time" name="time" required>
 
-        <!-- Appointment Form -->
-        <div id="book" class="appointment-form">
-            <h2>Book an Appointment</h2>
-            <form action="submit-booking.php" method="POST">
-                <label for="name">Child's Full Name:</label>
-                <input type="text" id="name" name="name" required>
+          <button type="submit">Submit Appointment</button>
+        </form>
+      </div>
+    </main>
 
-                <label for="barber">Choose Your Barber:</label>
-                <select id="barber" name="barber" required>
-                    <option value="Barber1">Barber 1 - Jass </option>
-                    <option value="Barber2">Barber 2 - Gurbir </option>
-                    <option value="Barber4">Barber 3 - Vishal </option>
-                    <option value="Barber4">Barber 4 - Sahil Mall </option>
-                    <option value="Barber5">Barber 5 - Rahul  </option>
-                    <option value="Barber4">Barber 6 - Manish </option>
-                    <option value="Barber4">Barber 7 - Ravi </option>
-                </select>
-
-                <label for="date">Preferred Appointment Date:</label>
-                <input type="date" id="date" name="date" required>
-
-                <label for="time">Preferred Appointment Time:</label>
-                <input type="time" id="time" name="time" required>
-
-                <button type="submit">Submit Appointment</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Back to Home Button -->
-    <button class="back-to-home-btn" onclick="window.location.href='index.html'">Back to Home</button>
-
+    <footer>
+      <div>
+        <h2>📍 Olivia Marie Gardens</h2>
+        <p>20 Sky Harbour Dr, Brampton, ON</p>
+        <p><a href="tel:9054600999">(905) 460-0999</a></p>
+      </div>
+      <div style="margin-top: 20px;">
+        <h2>📍 Main Street</h2>
+        <p>332 Main St N, Brampton, ON</p>
+        <p><a href="tel:9059569544">(905) 956-9544</a></p>
+      </div>
+      <div style="margin-top: 40px;">
+        <h3>Follow Us</h3>
+        <a href="https://www.tiktok.com/@5riversbarbershop" target="_blank">
+          <img src="Images/tik-tok.jpg" alt="TikTok" />
+        </a>
+        <a href="https://www.instagram.com/5rivers_barbershop/" target="_blank">
+          <img src="Images/insta.jpg" alt="Instagram" />
+        </a>
+      </div>
+      <p style="margin-top: 40px;">&copy; 2025 5 Rivers Barbers. Made by <a href="https://www.linkedin.com/in/bhavneet-bhavneet-300998295/" target="_blank">Kush</a></p>
+      <a href="index.html" class="back-to-top">⬆ Back to Home</a>
+    </footer>
+  </div>
 </body>
 </html>
