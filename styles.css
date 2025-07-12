@@ -87,7 +87,7 @@ button:hover {
 
 .home .container {
     position: relative;
-    background: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent dark overlay */
+    background: #22202082; /* Adds a semi-transparent dark overlay */
     padding: 40px;
     border-radius: 10px;
     color: #fff; /* Ensures text is white for contrast */
@@ -105,8 +105,11 @@ button:hover {
     z-index: -1; /* Places the blurred background behind the content */
 }
 
-.home h2, .home p {
-    color: #fff; /* Ensures text is white for contrast */
+.home h2 {
+    color: #b08a2e; /* Ensures text is white for contrast */
+}
+.home p {
+    color: #ffffff; /* Ensures text is white for contrast */
 }
 
 .about {
@@ -117,13 +120,15 @@ button:hover {
 
 .about .container {
     position: relative;
-    background: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent dark overlay */
+    background: #22202082; /* Adds a semi-transparent dark overlay */
     padding: 40px;
     border-radius: 10px;
 }
 
-.about h2, .about h3, .about p, .about ul {
-    color: #fff; /* Ensures text is white for contrast */
+.about h2, .about h3, .about ul {
+    color: #b08a2e; /* Ensures text is white for contrast */
+}.about p{
+    color: white;
 }
 
 .about .container::before {
@@ -137,7 +142,6 @@ button:hover {
     filter: blur(8px); /* Applies the blur effect to the background */
     z-index: -1; /* Places the blurred background behind the content */
 }
-
 
 .pricing-table {
     display: flex;
@@ -156,11 +160,11 @@ button:hover {
     justify-content: space-between;
     padding: 12px 20px;
     border-bottom: 1px solid #eee;
-    background-color: #ffcb47;
+    background-color: #000000;
   }
   
   .pricing-row:nth-child(even) {
-    background-color: #000000;
+    background-color: #726d6d;
   }
   
   .pricing-header {
@@ -181,15 +185,13 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: 'Poppins', sans-serif;
-    background: url('kid.jpeg') no-repeat center center fixed;
+ 
     background-size: cover;
     overflow-y: auto; /* Allow scrolling */
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Ensure content is spread out */
 }
-
-
 
 .container {
   position: relative;
@@ -214,6 +216,7 @@ body, html {
   z-index: -1; /* behind the container content */
 }
 
+
 h1, h2, p, .falling-text {
     font-weight: bold;
    font-family: unset; /* Make text bold */
@@ -229,9 +232,10 @@ h1 {
 
 h2 {
     font-size: 2rem;
-    color: #2c2c2c; /* Darker text color */
+    color: #000000; /* Darker text color */
     margin-top: 20px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+ 
+
     letter-spacing: 2px;
 }
 
@@ -298,15 +302,15 @@ h2 {
   
   .booking-form button {
     padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #ffcb47;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 4px;
     cursor: pointer;
   }
   
   .booking-form button:hover {
-    background-color: #45a049;
+    background-color: #007bff;
   }
   
 
@@ -435,22 +439,14 @@ h2 {
 
 
 
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* Body Styling */
 body {
-  font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; 
-
-
+    font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  
+  
     background: url('https://wallpapercave.com/wp/wp9441547.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: #ffffff;
+    color: #000000;
     line-height: 1.6;
     perspective: 1000px;
     overflow-x: hidden;
@@ -458,7 +454,7 @@ body {
 
 /* Header */
 .header {
-    background-color: rgba(26, 26, 26, 0.85);  /* Semi-transparent background to ensure readability */
+    background-color: #22202082;  /* Semi-transparent background to ensure readability */
     padding: 60px 20px;
     text-align: center;
     transform: rotateX(5deg);
@@ -467,8 +463,8 @@ body {
 
 .header h1 {
     font-size: 3.5rem;
-    color: #ffcb47;
-    text-shadow: 0 0 10px #ffcb47, 0 0 20px #ff7b00;
+    color: #eee301c5;
+
     animation: glowEffect 2s ease-in-out forwards;
 }
 
@@ -478,13 +474,18 @@ body {
     color: #b3b3b3;
 }
 
-/* Navigation Bar */
+/* Navigation Bar *//* Navigation Bar */
 .navbar {
+    position: fixed; /* Changed from relative to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: rgba(26, 26, 26, 0.9);  /* Darker shade for navbar */
     padding: 15px 20px;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
     animation: fadeIn 1.5s ease-in-out forwards;
+    z-index: 999; /* Ensure navbar stays above other elements */
 }
 
 .navbar ul {
@@ -492,6 +493,8 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar ul li a {
@@ -506,9 +509,80 @@ body {
 .navbar ul li a:hover {
     background-color: #ffcb47;
     color: #0f0f0f;
-    box-shadow: 0 0 15px #ffcb47;
+    box-shadow: 0 0 15px #151514;
     transform: scale(1.1) translateZ(10px);
 }
+/* 3-dot mobile menu icon */
+.menu-dots {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 1001;
+}
+
+/* Mobile Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  height: 100vh;
+  background-color: #1a1a1a;
+  padding-top: 80px;
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  display: block;
+  padding: 12px;
+  transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background-color: #ffcb47;
+  color: #111;
+}
+
+.sidebar.show {
+  right: 0;
+}
+
+/* Show dot icon + hide top nav on small screens */
+@media (max-width: 425px) {
+  .navbar ul {
+    display: none;
+  }
+
+  .menu-dots {
+    display: block;
+  }
+}
+
+/* Add top padding to body so content is not hidden behind navbar */
+body {
+    margin: 0;
+    padding-top: 80px; /* Adjust based on navbar height */
+}
+
 
 /* Section Styling */
 section {
@@ -521,16 +595,14 @@ section h2 {
     font-size: 2.8rem;
     color: #ffcb47;
     margin-bottom: 30px;
-    text-shadow: 0 0 10px #ffcb47;
+    text-shadow: 0 0 10px #151514;
     animation: zoomIn 1.2s ease-out forwards;
 }
-/* we update here the section bar for size h3 */
-
 section h3 {
     font-size: 2.8rem;
     color: #ffcb47;
     margin-bottom: 30px;
-    text-shadow: 0 0 10px #ffcb47;
+    text-shadow: 0 0 10px #151514;
     animation: zoomIn 1.2s ease-out forwards;
 }
 
@@ -607,6 +679,67 @@ section p {
     font-size: 1rem;
     color: #fff;
 }
+@media (max-width: 425px) {
+  /* Make navbar vertical and collapsible if needed */
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar ul li a {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+
+  /* Header responsiveness */
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  /* Section headers */
+  section h2,
+  section h3 {
+    font-size: 1.8rem;
+  }
+
+  section p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  /* Service buttons full width */
+  .service-btn {
+    font-size: 1rem;
+    width: 90%;
+    max-width: none;
+  }
+
+  /* Service cards stack vertically */
+  .services ul {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .services ul li {
+    width: 90%;
+  }
+
+  /* Reduce section padding */
+  section {
+    padding: 50px 10px;
+  }
+
+  /* Reduce body top padding (smaller navbar height) */
+  body {
+    padding-top: 70px;
+  }
+}
+
 
 /* Booking Form */
 .booking form {
@@ -658,6 +791,27 @@ section p {
     transform: translateZ(15px);
 }
 
+.location-section {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .location-section h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  .location-option {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
 /* Footer */
 .footer {
     background-color: rgba(26, 26, 26, 0.9);
@@ -766,6 +920,7 @@ section p {
     transform: scale(1.05);
 }
 
+/* Optional: Delay for each barber profile */
 
 
 /* Styles for the container and barber images */
@@ -878,21 +1033,6 @@ section p {
     gap: 15px;  /* Optional: space between the profiles */
 }
 
-/* Barber profile */
-.barber {
-    flex-shrink: 0; /* Prevents shrinking of individual profile cards */
-    width: 250px;  /* Width of each profile, adjust as necessary */
-    text-align: center; /* Center-aligns content inside each profile */
-    padding: 10px;
-}
-
-.barber img {
-    width: 100%;  /* Makes the image responsive to the profile width */
-    height: 300px;  /* Adjust the height of each image */
-    object-fit: cover;  /* Ensures the image fills the space without distortion */
-    border-radius: 8px;  /* Adds rounded corners */
-}
-
 /* Button for booking appointment */
 .book-now {
     margin-top: 10px;
@@ -960,6 +1100,162 @@ section p {
         flex: 1 1 100%; /* Make each profile take the full width on smaller screens */
     }
 }
+
+/* Hide extra images initially */
+/* Initially hidden images */
+/* Hides images by default if they have the 'hidden' class */
+.gallery-img.hidden {
+  display: none;
+}
+
+  
+  .gallery-img {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+  }
+  
+  .view-more-btn {
+    background-color: #d4af37;
+    color: #161111;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+
+/* Revealed images */
+.show {
+    display: block;
+}
+
+#toggle-gallery {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: rgb(255, 203, 71);
+    color: #000000;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.gallery {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.gallery-img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+  
+
+  
+  /* When images are revealed, apply smooth scaling and fade-in animation */
+  .show {
+    display: block;
+    opacity: 0;
+    animation: fadeInScale 0.5s forwards;
+  }
+  
+  /* Animation for the images */
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .location {
+    background-color: #22202082; /* Match your theme */
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .location h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .map-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .footer {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .shop-hours,
+  .shop-location {
+    margin-bottom: 15px;
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .shop-location p {
+    margin: 5px 0;
+  }
+  
+  .footer a {
+    color: #c8a1d2;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .back-to-top {
+    color: #000;
+    display: inline-block;
+    margin-top: 40px;
+    background-color: #d4af37;
+    color: #161111;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-to-top:hover {
+    background-color: #b08a2e;
+  }
+  button {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
   
   button:hover {
     background-color: #007bff; /* darker tone */
@@ -977,8 +1273,11 @@ section p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  
-/* ================== Responsive Design for Viewports Below 720px ================== */
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px #007bff;
+  }
+  /* ================== Responsive Design for Viewports Below 720px ================== */
 @media screen and (max-width: 720px) {
   .container,
   .home .container,
@@ -1029,19 +1328,162 @@ section p {
     width: 100%;
     margin: 5px 0;
   }
-}/* For message */
-#hover-message {
-  font-size: 16px;
-  color: #ffcb47;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  text-align: center;
+
+  .faq-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  .faq-question {
+    width: 100%;
+    background: #f7f7f7;
+    border: none;
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .faq-question:hover {
+    background: #e6e6e6;
+  }
+
+  
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 20px;
+    background: #fff;
+    border-left: 4px solid #c62d2d;
+    color: #444;
+    font-size: 1rem;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 12px 20px;
+  }
+
+  .faq-item.active .toggle-icon {
+    transform: rotate(180deg);
+    content: "−";
+  }
+}
+  @media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .cta-button {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+
+    .falling-text {
+        font-size: 1.2rem;
+    }
+
+    .appointment-form {
+        padding: 15px;
+    }
+
+    .back-to-home-btn {
+        font-size: 1.2rem;
+        padding: 12px 24px;
+    }
+
+    .booking-form {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .pricing-table {
+        flex-direction: column;
+    }
+
+    .pricing-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-type, .pricing-price {
+        text-align: center;
+        margin: 5px 0;
+    }
+}
+/* Light Theme (default) */
+body.light {
+  background-color: #fff;
+  color: #000;
 }
 
-#hover-message.visible {
-  opacity: 1;
+/* Dark Theme */
+body.dark {
+  background-color: #121212;
+  color: #eee;
 }
 
+/* Style other elements accordingly */
+.footer-maps {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.map-location {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.map-location iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+}
+#footer-section {
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+#footer-section * {
+  transition: color 0.8s ease;
+}
+#footer-section {
+  transition: background-color 0.8s ease, color 0.8s ease, box-shadow 1s ease;
+  box-shadow: none;
+}
+/* New slide-down animation */
+.slide-down {
+  animation: slideDownImage 0.6s ease forwards;
+}
+
+@keyframes slideDownImage {
+  from {
+    opacity: 0;
+    transform: translateY(-40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+#magic-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#magic-btn:hover {
+  transform: scale(1.15) rotate(3deg);
+  box-shadow: 0 0 15px 6px rgba(255, 215, 0, 0.7); /* golden glow */
+}
 
 /* For message */
 #hover-message {
@@ -1170,6 +1612,3 @@ html {
     display: block;
   }
 }
-
-
-      
