@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Book Appointment - 5 River Barbers</title>
-  <link rel="stylesheet" href="styles.css" /> 
+  <link rel="stylesheet" href="styles.css" /> <!-- your global CSS -->
 </head>
 <body>
- 
+  <!-- Your existing site header -->
   <header>
    
 
@@ -133,10 +133,10 @@
      <div class="social-links" style="margin-top: 20px;">
       <h3 style="color: #fff;">Follow Us</h3>
       <a href="https://www.tiktok.com/@5riversbarbershop" target="_blank" style="margin-right: 15px;">
-        <img src="Images/tik-tok.jpg" alt="TikTok" style="width: 32px; height: 32px;">
+        <img src="tik-tok.jpg" alt="TikTok" style="width: 32px; height: 32px;">
       </a>
       <a href="https://www.instagram.com/5rivers_barbershop/" target="_blank">
-        <img src="Images/insta.jpg" alt="Instagram" style="width: 32px; height: 32px;">
+        <img src="insta.jpg" alt="Instagram" style="width: 32px; height: 32px;">
       </a>
     </div>
 
@@ -180,37 +180,84 @@
   }
 
   function handleFormSubmission(event) {
-    event.preventDefault(); // ✨ Important
+  event.preventDefault();
 
-    const name = document.getElementById("customer-name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const notes = document.getElementById("notes").value.trim();
-    const location = document.querySelector("select[name='location']").value;
-    const barber = document.getElementById("barber-select").value;
-    const date = document.getElementById("appointment-date").value;
-    const time = document.getElementById("appointment-time").value;
+  const name = document.getElementById("customer-name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const notes = document.getElementById("notes").value.trim();
+  const location = document.querySelector("select[name='location']").value;
+  const barber = document.getElementById("barber-select").value;
+  const date = document.getElementById("appointment-date").value;
+  const time = document.getElementById("appointment-time").value;
 
-    const isConflict = bookedSlots.some(
-      slot => slot.location === location && slot.date === date && slot.time === time
-    );
+  const newAppointment = { name, email, phone, notes, location, barber, date, time };
 
-    if (isConflict) {
-      alert("⚠️ This time slot is already booked for the selected location. Please pick a different time.");
-      return;
-    }
+  // Load existing data or initialize
+  const storedMap = JSON.parse(localStorage.getItem("appointmentsByBarber") || "{}");
 
-    bookedSlots.push({ location, date, time });
-    playCheerfulTone();
-
-    setTimeout(() => {
-      const msg = document.getElementById("thank-you-msg");
-      msg.textContent = `🎉 Thanks ${name}! Your appointment with ${barber} at ${location} on ${date} at ${time} is confirmed.`;
-      msg.style.display = "block";
-      thankUserByName(name);
-      document.getElementById("appointment-form").reset();
-    }, 2000);
+  if (!storedMap[barber]) {
+    storedMap[barber] = [];
   }
+
+  // Check conflict
+  const isConflict = storedMap[barber].some(slot =>
+    slot.date === date && slot.time === time && slot.location === location
+  );
+
+  if (isConflict) {
+    alert("⚠️ This time slot is already booked for the selected barber and location.");
+    return;
+  }
+
+  // Store in map
+  storedMap[barber].push(newAppointment);
+  localStorage.setItem("appointmentsByBarber", JSON.stringify(storedMap));
+
+  playCheerfulTone();
+
+  setTimeout(() => {
+    const msg = document.getElementById("thank-you-msg");
+    msg.textContent = `🎉 Thanks ${name}! Your appointment with ${barber} at ${location} on ${date} at ${time} is confirmed.`;
+    msg.style.display = "block";
+    thankUserByName(name);
+    document.getElementById("appointment-form").reset();
+  }, 2000);
+}
+
+
+const storedMap = JSON.parse(localStorage.getItem("appointmentsByBarber") || "{}");
+
+for (const barber in storedMap) {
+  console.log(`Appointments for ${barber}:`);
+  console.table(storedMap[barber]);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById('appointment-form');
+  if (!form) {
+    console.error("appointment-form element not found");
+    return;
+  }
+  const barberSelect = document.getElementById('barber-select');
+  if (!barberSelect) {
+    console.error("barber-select element not found");
+    return;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const barber = barberSelect.value;
+    if (barber) {
+      if (typeof showAlert === 'function') {
+        showAlert(barber);
+      } else {
+        console.error("showAlert function is not defined");
+      }
+    }
+  });
+});
 </script>
 
 </body>
