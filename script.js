@@ -11,104 +11,19 @@ document.addEventListener("DOMContentLoaded", () => {
     listItems[customOrder.indexOf(dayIndex)].style.color = "#00cc66";
   }
 
-  // GSAP gallery scroll animation
-  if (typeof gsap !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray(".gallery-img").forEach((img, index) => {
-      const directions = ["left", "right", "top", "bottom"];
-      const direction = directions[index % 4];
-      gsap.from(img, {
-        scrollTrigger: {
-          trigger: img,
-          start: "top 90%",
-          toggleActions: "play none none reset"
-        },
-        x: direction === "left" ? -200 : direction === "right" ? 200 : 0,
-        y: direction === "top" ? -200 : direction === "bottom" ? 200 : 0,
-        opacity: 0,
-        duration: 1.2,
-        ease: "power3.out"
-      });
-    });
-  }
-
-  // Smooth scrolling
+  // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
+    anchor.addEventListener("click", e => {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
+      const target = document.querySelector(anchor.getAttribute("href"));
       if (target) target.scrollIntoView({ behavior: "smooth" });
     });
   });
 
-  // Toggle Gallery View
-  const btn = document.getElementById('toggle-gallery');
-  const hiddenImages = document.querySelectorAll('.gallery-img.hidden');
-  let shownCount = 3;
-  let clickCount = 0;
 
-  if (btn) {
-    btn.addEventListener('click', () => {
-      clickCount++;
-      let imagesToShow = clickCount <= 2 ? 3 : 5;
 
-      for (let i = shownCount; i < shownCount + imagesToShow && i < hiddenImages.length + 3; i++) {
-        if (hiddenImages[i - 3]) {
-          hiddenImages[i - 3].classList.remove('hidden');
-        }
-      }
 
-      shownCount += imagesToShow;
-      if (shownCount >= hiddenImages.length + 3) btn.style.display = 'none';
-    });
-  }
-});
-
-// Toggle Dark/Light Mode
-function toggleMode() {
-  const page = document.getElementById("page");
-  if (!page) return;
-  const current = page.getAttribute("class");
-  page.setAttribute("class", current === "light" ? "dark" : "light");
-}
-document.getElementById("toggleThemeBtn")?.addEventListener("click", toggleMode);
-
-// Tilt Animation on Service Buttons
-document.querySelectorAll('.service-btn').forEach(btn => {
-  btn.addEventListener('mousemove', (e) => {
-    const rect = btn.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    btn.style.transform = `rotateX(${ -y / 20 }deg) rotateY(${ x / 20 }deg)`;
-  });
-  btn.addEventListener('mouseleave', () => {
-    btn.style.transform = 'rotateX(0deg) rotateY(0deg)';
-  });
-});
-
-// Booking Logic
-const bookedSlots = [
-  { location: "Main Street", date: "2025-06-29", time: "15:00" },
-  { location: "Olivia Marie Gardens", date: "2025-06-29", time: "14:30" }
-];
-
-function playCheerfulTone() {
-  const tone = new Audio("sounds/myinstants.mp3");
-  tone.play().catch(error => console.error("Audio playback failed:", error));
-}
-
-function thankUserByName(name) {
-  const msg = `Thank you, ${name}, for booking your appointment with us at Five Rivers Barber Shop. We look forward to seeing you!`;
-  const speech = new SpeechSynthesisUtterance(msg);
-  speech.lang = "en-US";
-  speech.rate = 1;
-  speech.pitch = 1.1;
-  window.speechSynthesis.speak(speech);
-}
-
-function handleFormSubmission(event) {
-  event.preventDefault();
-
+  function handleFormSubmission(event) {
   const name = document.getElementById("customer-name").value.trim();
   const email = document.getElementById("email").value.trim();
   const phone = document.getElementById("phone").value.trim();
@@ -119,11 +34,11 @@ function handleFormSubmission(event) {
   const time = document.getElementById("appointment-time").value;
 
   const isConflict = bookedSlots.some(
-    (slot) => slot.location === location && slot.date === date && slot.time === time
+    slot => slot.location === location && slot.date === date && slot.time === time
   );
 
   if (isConflict) {
-    alert(" This time slot is already booked for the selected location. Please pick a different time.");
+    alert("⚠️ This time slot is already booked for the selected location. Please pick a different time.");
     return;
   }
 
@@ -139,60 +54,118 @@ function handleFormSubmission(event) {
   }, 2000);
 }
 
-document.getElementById("appointment-form")?.addEventListener("submit", handleFormSubmission);
 
-document.getElementById("barber-select")?.addEventListener("change", function () {
-  const otherBarberInput = document.getElementById("otherBarber");
-  if (otherBarberInput) {
-    otherBarberInput.style.display = this.value === "other" ? "block" : "none";
+  // GSAP Gallery Scroll Animation (if GSAP is loaded)
+  if (typeof gsap !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".gallery-img").forEach((img, index) => {
+      const directions = ["left", "right", "top"];
+      const direction = directions[index % directions.length];
+      gsap.from(img, {
+        scrollTrigger: {
+          trigger: img,
+          start: "top 90%",
+          toggleActions: "play none none reset",
+        },
+        x: direction === "left" ? -200 : direction === "right" ? 200 : 0,
+        y: direction === "top" ? -200 : 0,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out"
+      });
+    });
   }
+
+  // Initialize gallery toggle button
+  setupGalleryToggle();
+
+  // Footer color animation button
+  const magicBtn = document.getElementById("magic-btn");
+  if (magicBtn) {
+    magicBtn.addEventListener("click", animateFooterColor);
+    magicBtn.addEventListener("mouseover", () => {
+      const hoverMsg = document.getElementById("hover-message");
+      if (hoverMsg) {
+        hoverMsg.innerText = "🎨 Color Magic Loading...";
+        hoverMsg.classList.add("visible");
+      }
+    });
+    magicBtn.addEventListener("mouseout", () => {
+      const hoverMsg = document.getElementById("hover-message");
+      if (hoverMsg) hoverMsg.classList.remove("visible");
+    });
+  }
+
+  // Tilt animation on service buttons
+  document.querySelectorAll('.service-btn').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `rotateX(${-y / 20}deg) rotateY(${x / 20}deg)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    });
+  });
+
+  // Booking form submission
+  const form = document.getElementById("appointment-form");
+  if (form) {
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      handleFormSubmission(event);
+    });
+  }
+
+  // Dark/light mode toggle button
+  const toggleThemeBtn = document.getElementById("toggleThemeBtn");
+  if (toggleThemeBtn) toggleThemeBtn.addEventListener("click", toggleMode);
 });
 
-// Populate Haircut Offers
-const basicOffers = [
-  { name: "Classic Haircut", desc: "Timeless style." },
-  { name: "Fade Cuts", desc: "Stylish fade." },
-  { name: "Buzz Cuts", desc: "Low-maintenance style." },
-  { name: "Pompadours", desc: "Bold and stylish." },
-  { name: "Undercuts", desc: "Sleek and edgy." }
+// Booking slots stored in-memory for conflict check (can be replaced with server storage)
+const bookedSlots = [
+  { location: "Main Street", date: "2025-06-29", time: "15:00" },
+  { location: "Olivia Marie Gardens", date: "2025-06-29", time: "14:30" }
 ];
 
-const basicOffersList = document.getElementById("basicOffersList");
-if (basicOffersList) {
-  basicOffers.forEach(offer => {
-    const li = document.createElement("li");
-    li.innerHTML = `<strong>${offer.name}</strong> - ${offer.desc}`;
-    basicOffersList.appendChild(li);
-  });
+function playCheerfulTone() {
+  const tone = new Audio("sound.mp3");
+  tone.play().catch(error => console.error("Audio playback failed:", error));
 }
 
-// Populate Pricing Table
-const haircutPrices = [
-  { type: "Classic Haircut", cad: 25, usd: 18 },
-  { type: "Fade Cut", cad: 30, usd: 22 },
-  { type: "Buzz Cut", cad: 20, usd: 15 },
-  { type: "Pompadour", cad: 35, usd: 26 },
-  { type: "Undercut", cad: 28, usd: 21 }
-];
-
-const pricingTable = document.getElementById("pricingTable");
-if (pricingTable) {
-  haircutPrices.forEach(price => {
-    const row = document.createElement("div");
-    row.className = "pricing-row";
-    row.innerHTML = `
-      <div class="pricing-type">${price.type}</div>
-      <div class="pricing-price">${price.cad}</div>
-      <div class="pricing-price">${price.usd}</div>
-    `;
-    pricingTable.appendChild(row);
-  });
+function thankUserByName(name) {
+  const msg = `Thank you, ${name}, for booking your appointment with us at Five Rivers Barber Shop. We look forward to seeing you!`;
+  const speech = new SpeechSynthesisUtterance(msg);
+  speech.lang = "en-US";
+  speech.rate = 1;
+  speech.pitch = 1.1;
+  window.speechSynthesis.speak(speech);
 }
 
-// Animate footer background and text color
+
+
+// Dark/light mode toggle
+function toggleMode() {
+  const page = document.getElementById("page");
+  if (!page) return;
+  const current = page.className;
+  page.className = current === "light" ? "dark" : "light";
+}
+
+// Animate footer colors
+function getRandomBrightColor() {
+  const r = Math.floor(Math.random() * 156) + 100;
+  const g = Math.floor(Math.random() * 156) + 100;
+  const b = Math.floor(Math.random() * 156) + 100;
+  return { r, g, b, rgb: `rgb(${r},${g},${b})` };
+}
+function invertColor({ r, g, b }) {
+  return `rgb(${255 - r},${255 - g},${255 - b})`;
+}
 function animateFooterColor() {
   const footer = document.getElementById("footer-section");
-  const reactionBox = document.getElementById("footer-reaction");
+  const reactionBox = document.getElementById("hover-message");
 
   const bgColorObj = getRandomBrightColor();
   const bgColor = bgColorObj.rgb;
@@ -202,43 +175,280 @@ function animateFooterColor() {
   footer.style.color = textColor;
   Array.from(footer.querySelectorAll("*")).forEach(el => (el.style.color = textColor));
 
-  // Glow effect
   footer.style.boxShadow = `0 0 15px 5px ${bgColor}`;
   setTimeout(() => {
     footer.style.boxShadow = "none";
   }, 1000);
 
-  // Scale effect
   footer.style.transform = "scale(1.05)";
   setTimeout(() => {
     footer.style.transform = "scale(1)";
   }, 300);
 
-  // Fade in message
-  reactionBox.classList.remove("visible");
-  void reactionBox.offsetWidth; // reflow
-  reactionBox.innerText = `🌈 Explorer Mode Activated! Background: ${bgColor}, Text: ${textColor}`;
-  reactionBox.style.color = textColor;
-  reactionBox.classList.add("visible");
+  if (reactionBox) {
+    reactionBox.classList.remove("visible");
+    void reactionBox.offsetWidth; // trigger reflow
+    reactionBox.innerText = `🌈 Explorer Mode Activated! Background: ${bgColor}, Text: ${textColor}`;
+    reactionBox.style.color = textColor;
+    reactionBox.classList.add("visible");
+  }
 }
 
-// Initialize all event listeners on DOMContentLoaded
+// Gallery animations for batches of 3 images sliding in from different directions
+function animateGalleryImages(images) {
+  const animationClasses = ["slide-in-left", "slide-in-right", "slide-in-top"];
+  images.forEach((img, i) => {
+    img.classList.remove(...animationClasses);
+    img.classList.remove("hidden");
+    // trigger reflow to restart animation
+    void img.offsetWidth;
+    img.classList.add(animationClasses[i % animationClasses.length]);
+  });
+}
+
+// Gallery toggle button logic to reveal images in batches
+function setupGalleryToggle() {
+  const button = document.getElementById("toggle-gallery");
+  const allImages = Array.from(document.querySelectorAll(".gallery-img.hidden"));
+  let currentBatch = 0;
+  let clickCount = 0;
+
+  if (!button) return;
+
+  button.addEventListener("click", () => {
+    clickCount++;
+    const imagesToShow = clickCount <= 2 ? 3 : 5;
+    const imagesToAnimate = allImages.slice(currentBatch, currentBatch + imagesToShow);
+
+    animateGalleryImages(imagesToAnimate);
+
+    currentBatch += imagesToShow;
+
+    if (currentBatch >= allImages.length) {
+      button.style.display = "none";
+    }
+  });
+
+  // Clean animation classes on animation end for smooth reset
+  allImages.forEach(img => {
+    img.addEventListener("animationend", () => {
+      img.classList.remove("slide-in-left", "slide-in-right", "slide-in-top");
+    });
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Play beep sound
+function playCheerfulTone() {
+  const tone = new Audio("myinstants.mp3"); // Replace with your sound file path
+  tone.play();
+}
+
+
+// Create and show alert popup
+function showAlert(barberName) {
+  // Create alert box
+  const alertBox = document.createElement('div');
+  alertBox.innerText = `🚨 New Appointment for ${barberName}!`;
+  alertBox.style.position = 'fixed';
+  alertBox.style.top = '30%';
+  alertBox.style.left = '50%';
+  alertBox.style.transform = 'translate(-50%, -50%)';
+  alertBox.style.backgroundColor = 'red';
+  alertBox.style.color = 'white';
+  alertBox.style.padding = '30px 50px';
+  alertBox.style.fontSize = '2rem';
+  alertBox.style.zIndex = '9999';
+  alertBox.style.borderRadius = '10px';
+  alertBox.style.boxShadow = '0 0 20px rgba(0,0,0,0.5)';
+  alertBox.style.textAlign = 'center';
+
+  document.body.appendChild(alertBox);
+  playBeep();
+
+  // Auto-remove after 5 seconds
+  setTimeout(() => {
+    alertBox.remove();
+  }, 5000);
+}
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById('appointment-form');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const barber = document.getElementById('barber-select').value;
+      if (barber) {
+        showAlert(barber);
+      }
+    });
+  }
+});
+
+  // Optionally, submit form to backend here if needed
+  // this.submit();  // Uncomment if you're ready to process server-side
+
+
+ 
+  function handleFormSubmission(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("customer-name").value;
+    const location = document.querySelector("select[name='location']").value;
+    const date = document.getElementById("appointment-date").value;
+    const time = document.getElementById("appointment-time").value;
+
+    const newBooking = {
+      name,
+      location,
+      date,
+      time,
+      timestamp: new Date().toISOString()
+    };
+
+    // Store booking in localStorage
+    const saved = JSON.parse(localStorage.getItem("appointments") || "[]");
+    saved.push(newBooking);
+    localStorage.setItem("appointments", JSON.stringify(saved));
+
+    document.getElementById("thank-you-msg").textContent = `Thanks ${name}, your appointment is booked!`;
+    document.getElementById("thank-you-msg").style.display = "block";
+
+    loadAdminMessages();
+  }
+
+  function loadAdminMessages() {
+    const section = document.getElementById("admin-messages-section");
+    const list = document.getElementById("admin-messages");
+
+    const allAppointments = JSON.parse(localStorage.getItem("appointments") || "[]");
+    const locationAppointments = allAppointments.filter(a => a.location === SYSTEM_LOCATION);
+
+    if (locationAppointments.length > 0) {
+      section.style.display = "block";
+      list.innerHTML = "";
+      locationAppointments.slice(-5).forEach(app => {
+        const li = document.createElement("li");
+        li.style.marginBottom = "8px";
+        li.textContent = `🗓️ ${app.name} → ${app.date} at ${app.time}`;
+        list.appendChild(li);
+      });
+    }
+  }
+
+  // Auto-load admin messages when page loads
+  window.onload = loadAdminMessages;
+
+document.addEventListener("keydown", function (e) {
+  const isOwner = localStorage.getItem("isOwner") === "true";
+
+  // Book Now
+  if (e.key === "b" || e.key === "B") {
+    window.location.href = "booking.html";
+  }
+
+  // Focus search field (if available in future)
+  if (e.key === "/" && document.activeElement.tagName !== "INPUT") {
+    const search = document.getElementById("search");
+    if (search) search.focus();
+  }
+
+  // Escape closes all modals (if any open)
+  if (e.key === "Escape") {
+    const modals = document.querySelectorAll(".modal");
+    modals.forEach(m => m.style.display = "none");
+  }
+
+  // Owner - go to Messages
+  if ((e.key === "m" || e.key === "M") && isOwner) {
+    window.location.href = "owner-messages.html";
+  }
+
+  // Owner - go to Settings
+  if (e.shiftKey && e.key === "S" && isOwner) {
+    window.location.href = "owner-settings.html";
+  }
+
+  // Print report
+  if (e.ctrlKey && e.key === "d") {
+    e.preventDefault();
+    window.print();
+  }
+
+  // Show shortcut help overlay
+  if (e.key === "?") {
+    const help = document.getElementById("shortcut-help");
+    if (help) {
+      help.style.display = help.style.display === "none" ? "block" : "none";
+    }
+  }
+});
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("magic-btn").addEventListener("click", animateFooterColor);
-  setupGalleryToggle();
+  const PASSWORD = "@1313";
+
+  const loginPanel = document.getElementById("owner-login-panel");
+  const passwordInput = document.getElementById("owner-password-input");
+  const loginBtn = document.getElementById("owner-login-btn");
+  const loginError = document.getElementById("login-error");
+
+  document.addEventListener("keydown", function(e) {
+    if (e.ctrlKey && e.altKey && e.key.toLowerCase() === "o") {
+      e.preventDefault();
+
+      if (sessionStorage.getItem("ownerAccessGranted") === "true") {
+        window.location.href = "owner-dashboard.html";
+      } else {
+        loginError.style.display = "none";
+        passwordInput.value = "";
+        loginPanel.style.display = "block";
+        passwordInput.focus();
+      }
+    }
+  });
+
+  loginBtn.addEventListener("click", () => {
+    const enteredPass = passwordInput.value;
+    if (enteredPass === PASSWORD) {
+      sessionStorage.setItem("ownerAccessGranted", "true");
+      window.location.href = "owner-dashboard.html";
+    } else {
+      loginError.style.display = "block";
+      passwordInput.value = "";
+      passwordInput.focus();
+    }
+  });
 });
 
 
+  // Optional: Close panel on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && loginPanel.style.display === "block") {
+      loginPanel.style.display = "none";
+      loginError.style.display = "none";
+    }
+  });
 
-const magicBtn = document.getElementById("magic-btn");
-const hoverMsg = document.getElementById("hover-message");
+function toggleSidebar() {
+  const sidebar = document.getElementById("mobileSidebar");
+  sidebar.classList.toggle("show");
+}
 
-magicBtn.addEventListener("mouseover", () => {
-  hoverMsg.innerText = "🎨 Color Magic Loading...";
-  hoverMsg.classList.add("visible");
+// Close sidebar when a link is clicked
+document.querySelectorAll('.sidebar a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById("mobileSidebar").classList.remove("show");
+  });
 });
 
-magicBtn.addEventListener("mouseout", () => {
-  hoverMsg.classList.remove("visible");
-});
-
+ 
