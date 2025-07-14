@@ -1,3 +1,4 @@
+Security of code is now another concern 
 Week aecurity of the code ... Hacker can visit our code before and see the html and js files and now i turned the ;logic of js from ofsconfuer tool Fixing all the details in the service section which i not update form the last 6 mont lets work on it . 
 
 Another problem get found that the script of opening the owner page is now not working ( Under the trap) .--------------- 
