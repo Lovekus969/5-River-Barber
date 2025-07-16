@@ -1,3 +1,5 @@
+Updation of today .. we are gouin to live this website soosn lets hanlde first some edge cases wirth file handing error exceptions , also we will see how the user expperience feel be6ter 
+
 We aleredy added confused js i it if user from another plannet want to see the code from ctrl + u then they can see my frontend no worrries i alredy pu tmy logic in confused code 
 Security of code is now another concern 
 Week aecurity of the code ... Hacker can visit our code before and see the html and js files and now i turned the ;logic of js from ofsconfuer tool Fixing all the details in the service section which i not update form the last 6 mont lets work on it . 
