@@ -16,11 +16,13 @@
       color: #eee;
     }
 
+      
     h1 {
       color: #d4af37;
       text-align: center;
       font-size: 2rem;
       margin-bottom: 30px;
+       background-color: rgba(34, 34, 34, 0.3);
     }
 
     label {
@@ -47,6 +49,7 @@
     box-shadow: 0 0 6px #d4af37;
     color: #eee;
     transition: background-color 0.3s ease;
+    background-color: rgba(34, 34, 34, 0.3);
 }
 
     }
@@ -56,12 +59,14 @@
       font-size: 18px;
       margin-bottom: 8px;
       color: #ffd700;
+      background-color: rgba(34, 34, 34, 0.3);
     }
 
     .appointment-details {
       font-size: 15px;
       color: #ccc;
       line-height: 1.6;
+      background-color: rgba(34, 34, 34, 0.3);
     }
 
     .no-appointments {
@@ -73,6 +78,7 @@
   </style>
 </head>
 <body class="owner-dashboard">
+   
 
   <!-- Optional: You can copy the site's navbar here if needed -->
 
@@ -110,13 +116,58 @@
   </button>
 </div>
 
-<p id="appointments-count" style="font-weight: bold; margin-bottom: 20px; color: #ffcb47;"></p>
+<p id="appointments-count" style="font-weight: bold; margin-bottom: 20px; color: #000000;"></p>
 
+<hr style="margin: 40px 0; border-top: 2px solid #000000;">
+
+<section id="barber-calculator" style="background:#686c70; color:#fff; padding:30px; border-radius:12px; max-width:600px; margin:40px auto;">
+  <h2 style="color:#000000; text-align:center;">💈 Daily Income Calculator</h2>
+
+  <label>Walk-in Cash ($)
+    <input type="number" id="walkinCash" placeholder="0" style="width:100%;padding:10px;margin:5px 0;">
+  </label>
+
+  <label>Debit/Credit Payments ($)
+    <input type="number" id="cardPayments" placeholder="0" style="width:100%;padding:10px;margin:5px 0;">
+  </label>
+
+  <label>Tips ($)
+    <input type="number" id="tips" placeholder="0" style="width:100%;padding:10px;margin:5px 0;">
+  </label>
+
+  <label>Expenses ($)
+    <input type="number" id="expenses" placeholder="0" style="width:100%;padding:10px;margin:5px 0;">
+  </label>
+
+  <button onclick="calculateBarberIncome()" style="margin-top:15px;padding:10px 20px;background:#ffcb47;border:none;color:#000;font-weight:bold;border-radius:8px;cursor:pointer;">Calculate</button>
+
+  <div id="incomeResults" style="margin-top:20px;">
+    <p>Total Income: <strong>$<span id="totalIncome">0.00</span></strong></p>
+    <p>Net Profit (After Expenses): <strong>$<span id="netProfit">0.00</span></strong></p>
+  </div>
+</section>
 
   
   <script>
+
+      function calculateBarberIncome() {
+  const walkin = parseFloat(document.getElementById("walkinCash").value) || 0;
+  const card = parseFloat(document.getElementById("cardPayments").value) || 0;
+  const tips = parseFloat(document.getElementById("tips").value) || 0;
+  const expenses = parseFloat(document.getElementById("expenses").value) || 0;
+
+  const totalIncome = walkin + card + tips;
+  const netProfit = totalIncome - expenses;
+
+  document.getElementById("totalIncome").textContent = totalIncome.toFixed(2);
+  document.getElementById("netProfit").textContent = netProfit.toFixed(2);
+}
+
+
+
+
     (function checkPassword() {
-  const correctPassword = '@1313'; // actual password
+  const correctPassword = '@1313'; // replace with your actual password
 
   let entered = prompt("Enter Owner Password:");
 
@@ -285,6 +336,8 @@ function exportToCSV() {
     searchInput.addEventListener('input', renderAppointments);
     sortSelect.addEventListener('change', renderAppointments);
     exportBtn.addEventListener('click', exportToCSV);
+
+
   </script>
 </body>
 </html>
