@@ -1,3 +1,5 @@
+So far so good ..
+
 Updation of today is to built the Barber helper calculation process 
 Build a calculator that helps you (or any barber) manage daily income from different sources like:
 
