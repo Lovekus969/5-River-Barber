@@ -4,6 +4,7 @@ Build a calculator that helps you (or any barber) manage daily income from diffe
 Walk-in Cash  ..........Debit/Credit Payments.............Tips................Expenses (optional)
 Basic  Key Features which it should have :
 Add multiple entries for each category.
+Addedd successfully 
 
 Automatically calculate total income and profit.
 
