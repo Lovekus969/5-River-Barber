@@ -1,3 +1,4 @@
+PRoblem found the owner oage is not opening directly bug need to fix 
 So far so good ..
 
 Updation of today is to built the Barber helper calculation process 
