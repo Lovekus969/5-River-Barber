@@ -2,7 +2,14 @@ Updation of today is to built the Barber helper calculation process
 Build a calculator that helps you (or any barber) manage daily income from different sources like:
 
 Walk-in Cash  ..........Debit/Credit Payments.............Tips................Expenses (optional)
+Basic  Key Features which it should have :
+Add multiple entries for each category.
 
+Automatically calculate total income and profit.
+
+Optional expense tracking.
+
+Clean and mobile-friendly UI
 Updation of today .. we are gouin to live this website soosn lets hanlde first some edge cases wirth file handing error exceptions , also we will see how the user expperience feel be6ter 
 
 We aleredy added confused js i it if user from another plannet want to see the code from ctrl + u then they can see my frontend no worrries i alredy pu tmy logic in confused code 
