@@ -452,3 +452,46 @@ document.querySelectorAll('.sidebar a').forEach(link => {
 });
 
  
+
+
+  const PASSWORD = "@1313";
+
+  const loginPanel = document.getElementById("owner-login-panel");
+  const passwordInput = document.getElementById("owner-password-input");
+  const loginBtn = document.getElementById("owner-login-btn");
+  const loginError = document.getElementById("login-error");
+
+  document.addEventListener("keydown", function(e) {
+    if (e.ctrlKey && e.altKey && e.key.toLowerCase() === "o") {
+      e.preventDefault();
+
+      if (sessionStorage.getItem("ownerAccessGranted") === "true") {
+        window.location.href = "owner-dashboard.html";
+      } else {
+        loginError.style.display = "none";
+        passwordInput.value = "";
+        loginPanel.style.display = "block";
+        passwordInput.focus();
+      }
+    }
+  });
+
+  loginBtn.addEventListener("click", () => {
+    const enteredPass = passwordInput.value;
+    if (enteredPass === PASSWORD) {
+      sessionStorage.setItem("ownerAccessGranted", "true");
+      window.location.href = "owner-dashboard.html";
+    } else {
+      loginError.style.display = "block";
+      passwordInput.value = "";
+      passwordInput.focus();
+    }
+  });
+
+  // Optional: Close panel on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && loginPanel.style.display === "block") {
+      loginPanel.style.display = "none";
+      loginError.style.display = "none";
+    }
+  });
