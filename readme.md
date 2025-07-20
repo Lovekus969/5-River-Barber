@@ -1,3 +1,6 @@
+Task of todays 
+Text get blurr ... for mosre visible 
+task2 text need to bold in the calculator and make the background little  blurry and light 
 PRoblem found the owner oage is not opening directly bug need to fix 
 So far so good ..
 
