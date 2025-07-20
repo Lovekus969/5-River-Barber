@@ -8,13 +8,17 @@
 
   <style>
     /* Owner dashboard-specific styles */
-    .owner-dashboard {
-      max-width: 960px;
-      margin: 30px auto;
-      padding: 20px;
-      background-color: #121212;
-      color: #eee;
-    }
+   .owner-dashboard {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: rgba(18, 18, 18, 0.5); /* semi-transparent black */
+    color: #eee;
+    backdrop-filter: blur(10px); /* adds blur to the background behind the element */
+    border-radius: 12px; /* optional for rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* optional for depth */
+}
+
 
       
     h1 {
@@ -120,48 +124,53 @@
 
 <hr style="margin: 40px 0; border-top: 2px solid #000000;">
 
-<section id="barber-calculator" style="background:#686c70; color:#fff; padding:30px; border-radius:12px; max-width:600px; margin:40px auto;">
-  <h2 style="color:#000000; text-align:center;">💈 Daily Income Calculator</h2>
+<section id="barber-calculator" style="background:#2f2f2f; color:#fff; padding:30px; border-radius:12px; max-width:600px; margin:40px auto; font-family:sans-serif;">
+  <h2 style="color:#ffcb47; text-align:center;">💈 Daily Income Calculator</h2>
 
-  <label>Walk-in Cash ($)
-    <input type="number" id="walkinCash" placeholder="0" style="width:100%;padding:10px;margin:5px 0;">
-  </label>
+  <div style="display:flex; flex-direction:column; gap:15px; margin-top:20px;">
+    <label>
+      Walk-in Cash ($)
+      <input type="number" id="walkinCash" placeholder="0.00" min="0" step="0.01" style="width:100%; padding:10px; border-radius:6px; border:none;">
+    </label>
 
-  <label>Debit/Credit Payments ($)
-    <input type="number" id="cardPayments" placeholder="0" style="width:100%;padding:10px;margin:5px 0;">
-  </label>
+    <label>
+      Debit/Credit Payments ($)
+      <input type="number" id="cardPayments" placeholder="0.00" min="0" step="0.01" style="width:100%; padding:10px; border-radius:6px; border:none;">
+    </label>
 
-  <label>Tips ($)
-    <input type="number" id="tips" placeholder="0" style="width:100%;padding:10px;margin:5px 0;">
-  </label>
+    <label>
+      Tips ($)
+      <input type="number" id="tips" placeholder="0.00" min="0" step="0.01" style="width:100%; padding:10px; border-radius:6px; border:none;">
+    </label>
 
-  <label>Expenses ($)
-    <input type="number" id="expenses" placeholder="0" style="width:100%;padding:10px;margin:5px 0;">
-  </label>
+    <label>
+      Expenses ($)
+      <input type="number" id="expenses" placeholder="0.00" min="0" step="0.01" style="width:100%; padding:10px; border-radius:6px; border:none;">
+    </label>
 
-  <button onclick="calculateBarberIncome()" style="margin-top:15px;padding:10px 20px;background:#ffcb47;border:none;color:#000;font-weight:bold;border-radius:8px;cursor:pointer;">Calculate</button>
+    <button onclick="calculateBarberIncome()" style="padding:12px; background:#ffcb47; color:#000; font-weight:bold; border:none; border-radius:8px; cursor:pointer;">Calculate</button>
+  </div>
 
-  <div id="incomeResults" style="margin-top:20px;">
+  <div id="incomeResults" style="margin-top:30px; text-align:center;">
     <p>Total Income: <strong>$<span id="totalIncome">0.00</span></strong></p>
     <p>Net Profit (After Expenses): <strong>$<span id="netProfit">0.00</span></strong></p>
   </div>
 </section>
 
-  
-  <script>
+<script>
+  function calculateBarberIncome() {
+    const walkin = parseFloat(document.getElementById("walkinCash").value) || 0;
+    const card = parseFloat(document.getElementById("cardPayments").value) || 0;
+    const tips = parseFloat(document.getElementById("tips").value) || 0;
+    const expenses = parseFloat(document.getElementById("expenses").value) || 0;
 
-      function calculateBarberIncome() {
-  const walkin = parseFloat(document.getElementById("walkinCash").value) || 0;
-  const card = parseFloat(document.getElementById("cardPayments").value) || 0;
-  const tips = parseFloat(document.getElementById("tips").value) || 0;
-  const expenses = parseFloat(document.getElementById("expenses").value) || 0;
+    const totalIncome = walkin + card + tips;
+    const netProfit = totalIncome - expenses;
 
-  const totalIncome = walkin + card + tips;
-  const netProfit = totalIncome - expenses;
+    document.getElementById("totalIncome").textContent = totalIncome.toFixed(2);
+    document.getElementById("netProfit").textContent = netProfit.toFixed(2);
+  }
 
-  document.getElementById("totalIncome").textContent = totalIncome.toFixed(2);
-  document.getElementById("netProfit").textContent = netProfit.toFixed(2);
-}
 
 
 
