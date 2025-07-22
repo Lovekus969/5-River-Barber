@@ -3,6 +3,8 @@ A modern website for a two-location barbershop with integrated tools to help man
 
  What’s Completed So Far 
 
+ Issue found in the footer section in all beause we use the fotter section common and unfortunantely we put the old version or id inside due to what id doesnot recognise and redirecting file to the main index file and its time to fix this issue no matter what lets fix it . csss lik=ne 1657
+
 Servise section we have five pages and we dont the firt classic page  done so far and its good and now we will move towards tghe next page  which is none other thsn the page of beard trim section adn i know we will built it.Our  Main Goals
 Modern UI/UX touch
 
