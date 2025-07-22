@@ -6,6 +6,7 @@ So far so good ..
 
 Now its time to host this website so far we can see it on netfly and once its look as same as from my main files because sometime i  forgot to update git and i fix in my project directly so i know most of the things still mising 
 
+Basically so far so good but now its time to build the pages of the website 
 
 Updation of today is to built the Barber helper calculation process 
 Build a calculator that helps you (or any barber) manage daily income from different sources like:
