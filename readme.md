@@ -5,6 +5,7 @@ PRoblem found the owner oage is not opening directly bug need to fix
 So far so good ..
 
 Now its time to host this website so far we can see it on netfly and once its look as same as from my main files because sometime i  forgot to update git and i fix in my project directly so i know most of the things still mising 
+"Added Classic Haircut service section with image, price, and details
 
 Basically so far so good but now its time to build the pages of the website 
 
