@@ -198,7 +198,7 @@ body, html {
   z-index: 1;
   text-align: center;
   padding: 100px 20px;
-  color: #ffffff;
+  color: #a7a3a3ad;
   flex-grow: 1; 
   overflow: hidden; /* make sure blur doesn't overflow */
 }
@@ -226,7 +226,7 @@ h1 {
     font-size: 4rem;
     text-transform: uppercase;
     letter-spacing: 5px;
-    color: #2c2c2c; /* Darker text color */
+    color: #cfba2e; /* Darker text color */
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
 }
 
@@ -471,7 +471,7 @@ body {
 .header p {
     margin-top: 15px;
     font-size: 1.3rem;
-    color: #b3b3b3;
+    color: #d3b7b7d3;
 }
 
 /* Navigation Bar *//* Navigation Bar */
@@ -1657,7 +1657,7 @@ footer .back-to-top {
   display: inline-block;
   margin-top: 30px;
   font-size: 0.9rem;
-  color: #fff;
+  color: #000000;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -1666,7 +1666,9 @@ footer .back-to-top:hover {
   color: #d4af37;
   text-decoration: underline;
 }
-//add pricing for the classic haircut page pricing style 
+
+
+
 
 .price-table-container {
   position: relative;
@@ -1704,7 +1706,6 @@ footer .back-to-top:hover {
 .price-table td {
   padding: 12px 15px;
   border-bottom: 1px solid #444;
-    
   text-align: left;
 }
 
@@ -1716,7 +1717,15 @@ footer .back-to-top:hover {
 
 .price-table tr:hover {
   background-color: rgba(255, 203, 71, 0.3);
-  cursor: defaul
+  cursor: default;
+}
+
+
+
+
+
+
+
 
 
 
@@ -1751,7 +1760,7 @@ footer .back-to-top:hover {
 
 .service-box {
   flex: 1 1 300px;
-  background: #fff;
+  background: #ccc9c997;
   border-radius: 16px;
   padding: 30px;
   box-shadow: 0 10px 24px rgba(0,0,0,0.05);
@@ -1771,7 +1780,7 @@ footer .back-to-top:hover {
 
 .service-box p {
   font-size: 1rem;
-  color: #555;
+  color: #000000;
 }
 
 .cta-center {
@@ -1793,16 +1802,3 @@ footer .back-to-top:hover {
 .btn-primary:hover {
   background-color: #333;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
