@@ -1704,6 +1704,7 @@ footer .back-to-top:hover {
 .price-table td {
   padding: 12px 15px;
   border-bottom: 1px solid #444;
+    
   text-align: left;
 }
 
@@ -1715,5 +1716,93 @@ footer .back-to-top:hover {
 
 .price-table tr:hover {
   background-color: rgba(255, 203, 71, 0.3);
-  cursor: default;
+  cursor: defaul
+
+
+
+
+
+.section {
+  padding: 80px 20px;
+  background-color: #7d7c7c47;
 }
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #444;
+  margin-bottom: 50px;
+}
+
+.services-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.service-box {
+  flex: 1 1 300px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+}
+
+.service-box h3 {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.service-box p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.cta-center {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #ffcb47;
+  color: #000000;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
