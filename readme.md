@@ -1,7 +1,18 @@
 5 Rivers Barbershop Website & Management System
 A modern website for a two-location barbershop with integrated tools to help manage appointments, display services, and provide owner-level control over operations. Built with pure HTML, CSS, JS (frontend), and expanding into full-stack development.
 
- What’s Completed So Far
+ What’s Completed So Far 
+
+Servise section we have five pages and we dont the firt classic page  done so far and its good and now we will move towards tghe next page  which is none other thsn the page of beard trim section adn i know we will built it.Our  Main Goals
+Modern UI/UX touch
+
+Polished mobile responsiveness
+
+Real grooming brand vibe
+
+Smooth scroll and animations
+
+Appointment-ready styling
  Beautiful responsive homepage with gallery, service sections, and CTA
 
  Secret owner panel access via keyboard combo (Ctrl + Alt + O)
@@ -10,7 +21,7 @@ A modern website for a two-location barbershop with integrated tools to help man
 
  Gallery section with "View More" logic
 
- Classic Haircut service page added with image, pricing table
+ Classic Haircut service page added with image, pricing table ... 
 
  JavaScript obfuscation added for code security
 
