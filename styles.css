@@ -1612,3 +1612,57 @@ html {
     display: block;
   }
 }
+
+
+
+
+/* Footer Styles */
+footer {
+  background-color: #000000b3;
+  color: #ccc;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.9rem;
+  margin-top: 60px;
+  font-family: 'Poppins', sans-serif;
+}
+
+footer h2, footer h3 {
+  color: #d4af37;
+  margin-bottom: 15px;
+}
+
+footer a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer img {
+  width: 32px;
+  height: 32px;
+  margin: 0 8px;
+  vertical-align: middle;
+}
+
+footer p {
+  margin-top: 30px;
+  color: #ccc;
+}
+
+footer .back-to-top {
+  display: inline-block;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .back-to-top:hover {
+  color: #d4af37;
+  text-decoration: underline;
+}
