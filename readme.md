@@ -1,7 +1,7 @@
 5 Rivers Barbershop Website & Management System
 A modern website for a two-location barbershop with integrated tools to help manage appointments, display services, and provide owner-level control over operations. Built with pure HTML, CSS, JS (frontend), and expanding into full-stack development.
 
- What’s Completed So Far 
+ What’s Completed So Far Poliah the website and work on the resst pages and in the next two pages no need to do more just focus on the old css adn remove inline css and make it clear 
 
  Issue found in the footer section in all beause we use the fotter section common and unfortunantely we put the old version or id inside due to what id doesnot recognise and redirecting file to the main index file and its time to fix this issue no matter what lets fix it . csss lik=ne 1657
  Lets update now the third page which is steam session 
