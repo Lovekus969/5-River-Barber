@@ -592,12 +592,16 @@ section {
 }
 
 section h2 {
-    font-size: 2.8rem;
-    color: #ffcb47;
-    margin-bottom: 30px;
-    text-shadow: 0 0 10px #151514;
-    animation: zoomIn 1.2s ease-out forwards;
+  font-size: 2.8rem;
+  color: #ffcb47;
+  margin-bottom: 30px;
+  text-shadow:
+    0 0 10px #151514,     /* existing glow */
+    0 0 20px rgba(0, 0, 0, 0.6), /* extra shadow for blur */
+    0 0 30px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 1.2s ease-out forwards;
 }
+
 section h3 {
     font-size: 2.8rem;
     color: #ffcb47;
@@ -1618,7 +1622,7 @@ html {
 
 /* Footer Styles */
 footer {
-  background-color: #000000b3;
+  background-color: #141414a1;
   color: #ccc;
   text-align: center;
   padding: 40px 20px;
