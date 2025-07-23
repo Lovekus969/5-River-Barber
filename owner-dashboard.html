@@ -6,87 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" /> <!-- Link to your global site CSS -->
 
-  <style>
-    /* Owner dashboard-specific styles */
-   .owner-dashboard {
-    max-width: 960px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: rgba(18, 18, 18, 0.5); /* semi-transparent black */
-    color: #eee;
-    backdrop-filter: blur(10px); /* adds blur to the background behind the element */
-    border-radius: 12px; /* optional for rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* optional for depth */
-}
-
-
-      
-    h1 {
-      color: #d4af37;
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 30px;
-       background-color: rgba(34, 34, 34, 0.3);
-    }
-
-    label {
-      font-weight: bold;
-      margin-right: 10px;
-    }
-
-    select, input[type="text"] {
-      padding: 8px 12px;
-      margin-bottom: 20px;
-      font-size: 16px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    .appointment-card {
-      .appointment-card {
-    background-color: rgba(34, 34, 34, 0.6); /* semi-transparent dark */
-    backdrop-filter: blur(8px); /* blur behind the card */
-    -webkit-backdrop-filter: blur(8px); /* Safari support */
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 16px;
-    box-shadow: 0 0 6px #d4af37;
-    color: #eee;
-    transition: background-color 0.3s ease;
-    background-color: rgba(34, 34, 34, 0.3);
-}
-
-    }
-
-    .appointment-header {
-      font-weight: bold;
-      font-size: 18px;
-      margin-bottom: 8px;
-      color: #ffd700;
-      background-color: rgba(34, 34, 34, 0.3);
-    }
-
-    .appointment-details {
-      font-size: 15px;
-      color: #ccc;
-      line-height: 1.6;
-      background-color: rgba(34, 34, 34, 0.3);
-    }
-
-    .no-appointments {
-      text-align: center;
-      font-style: italic;
-      margin-top: 40px;
-      color: #f7d048;
-    }
-  </style>
+  
 </head>
+   <nav class="navbar">
+
+  <!-- 3-dot icon -->
+  <div class="menu-dots" onclick="toggleSidebar()">⋯</div>
+
+  <!-- Desktop nav -->
+  <ul>
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#about">About Us</a></li>
+    <li><a href="booking.html">Book Now</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+
+  <!-- Sidebar for mobile -->
+  <div class="sidebar" id="mobileSidebar">
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="booking.html">Book Now</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<br>
+
+<br>
+<br>
+<br>
 <body class="owner-dashboard">
    
 
   <!-- Optional: You can copy the site's navbar here if needed -->
 
-  <h1>📬 Manage Appointments - Owner Dashboard</h1>
+  <h2>       📬 Manage Appointments - Owner Dashboard</h2>
 
   <div>
     <label for="location-filter">Filter by Location:</label>
@@ -157,7 +116,6 @@
   </div>
 </section>
 
-
   <!-- Footer Section -->
 <footer class="footer" id="footer-section">
   <div class="container">
@@ -201,10 +159,9 @@
   Made by <a href="https://www.linkedin.com/in/bhavneet-bhavneet-300998295/" target="_blank" style="color: rgb(8, 112, 181);">Kush</a>
 </p>
 
-    <a href="#home" class="back-to-top" style="color: black;">⬆ Back to Home</a>
+    <a href="index.html" class="back-to-top" style="color: black;">⬆ Back to Home</a>
 
   </div>
- 
 
 </footer>
 
@@ -399,5 +356,21 @@ function exportToCSV() {
 
 
   </script>
+  <script>
+function toggleSidebar() {
+  const sidebar = document.getElementById("mobileSidebar");
+  sidebar.classList.toggle("show");
+}
+
+// Close sidebar when a link is clicked
+document.querySelectorAll('.sidebar a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById("mobileSidebar").classList.remove("show");
+  });
+});
+
+ 
+</script>
+<script src="Confused.js"></script>
 </body>
 </html>
