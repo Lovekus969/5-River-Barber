@@ -8,6 +8,7 @@ A modern website for a two-location barbershop with integrated tools to help man
 
 Servise section we have five pages and we dont the firt classic page  done so far and its good and now we will move towards tghe next page  which is none other thsn the page of beard trim section adn i know we will built it.
 So dar so good and we alredy fixed our three pages so nice full y working script in mobile view jsut the slider but the code made redudancy here and in oreder to remove redudacy we need to add the script inside and in that script then we have to make new confusted tool javascript file inside and then hide the scipt 
+Succesffully completed the code adn reduce redudancy adn updated javascript confused version get added 
 
 .Our  Main Goals
 Modern UI/UX touch
