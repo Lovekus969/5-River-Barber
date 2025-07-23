@@ -4,155 +4,113 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kids' Haircuts - 5 River Barbers</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
-      color: #fff;
       background: #000;
+      color: #fff;
     }
 
-    /* Background behind everything */
     .page-wrapper::before {
       content: "";
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('kid.jpeg') no-repeat center center fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('Images/kid-bg.jpg') no-repeat center center fixed;
       background-size: cover;
       z-index: -1;
-      filter: brightness(0.5);
+      filter: brightness(0.4);
     }
 
-    .page-wrapper {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-   main {
-  flex: 1;
-  padding: 100px 20px 60px;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  max-width: 1000px;
-  margin: auto;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-
-    h1 {
-      font-size: 3rem;
-      text-transform: uppercase;
-      color: #f3c702;
-      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    main {
+      padding: 100px 20px 60px;
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
     }
 
     h2 {
-      font-size: 2rem;
-      color: #ffdb0c;
-      margin-top: 20px;
+      font-size: 2.4rem;
+      color: #f3c702;
+      margin-bottom: 20px;
     }
 
     p {
       font-size: 1.1rem;
-      line-height: 1.6;
+      line-height: 1.7;
+      margin-bottom: 15px;
     }
 
     .cta-button {
       margin-top: 30px;
-      padding: 15px 30px;
-      background-color: #ffcb47;
+      padding: 14px 28px;
+      background: #ffcb47;
       color: #000;
-      font-size: 1.2rem;
-      text-decoration: none;
       border-radius: 6px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
-      display: inline-block;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      transition: background 0.3s ease;
     }
 
     .cta-button:hover {
-      background-color: #e68a00;
+      background: #e6a600;
     }
 
     .falling-text {
-      margin-top: 30px;
-      color: #ffcb47;
       font-size: 1.3rem;
-      animation: bounceText 2s ease-out infinite;
+      color: #ffcb47;
+      animation: float 3s ease-in-out infinite;
+      margin-top: 20px;
     }
 
-    @keyframes bounceText {
-      0% { transform: translateY(-10px); }
-      50% { transform: translateY(10px); }
-      100% { transform: translateY(-10px); }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
     }
 
-   .appointment-form {
-  margin-top: 50px;
-  padding: 20px;
-  background-color: rgba(20, 20, 20, 0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 10px;
-  text-align: left;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-}
-
-    .appointment-form label {
-      display: block;
-      margin: 15px 0 5px;
-      font-weight: 600;
-    }
-
-    .appointment-form input,
-    .appointment-form select,
-    .appointment-form button {
+    /* Swiper carousel */
+    .swiper {
       width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border-radius: 5px;
-      border: 1px solid #ffcb47;
-      background-color: #333;
-      color: #fff;
+      padding: 40px 0;
     }
 
-    .appointment-form button {
-      background-color: #ffcb47;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
+    .swiper-slide {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
     }
 
-    .appointment-form button:hover {
-      background-color: #e68a00;
+    .swiper-slide img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .swiper-slide img:hover {
+      transform: scale(1.05);
     }
 
     footer {
       background: #111;
-      color: #aaa;
+      color: #ccc;
       text-align: center;
       padding: 40px 20px;
     }
 
     footer h2, footer h3 {
-      color: #d4af37;
-    }
-
-    footer a {
-      color: #d4af37;
-      text-decoration: none;
+      color: #ffdb0c;
     }
 
     footer img {
@@ -162,37 +120,69 @@
     }
 
     .back-to-top {
-      display: inline-block;
       margin-top: 20px;
+      display: inline-block;
       color: #fff;
     }
 
     @media (max-width: 768px) {
-      h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.5rem; }
-    }
-
-    @media (max-width: 480px) {
-      h1 { font-size: 1.7rem; }
+      h2 { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
+   <nav class="navbar">
+
+  <!-- 3-dot icon -->
+  <div class="menu-dots" onclick="toggleSidebar()">⋯</div>
+
+  <!-- Desktop nav -->
+  <ul>
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#about">About Us</a></li>
+    <li><a href="booking.html">Book Now</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+
+  <!-- Sidebar for mobile -->
+  <div class="sidebar" id="mobileSidebar">
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="booking.html">Book Now</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
   <div class="page-wrapper">
     <main>
-      <h1>Kids' Haircuts</h1>
-      <p>We offer gentle and fun haircuts for kids. Our barbers are skilled at working with younger clients to ensure they leave with a smile and a great haircut!</p>
-      <h2>Services Offered:</h2>
-      <p><strong>Bring your kids in for a haircut they'll love! Book an appointment today!</strong></p>
-
-      <div class="falling-text">Bright smiles and fresh styles for your little ones!</div>
+      <h2>Kids' Haircuts</h2>
+      <p>We specialize in fun and stress-free kids’ haircuts. From toddlers to teens, our friendly barbers ensure your little one leaves looking fresh and feeling confident.</p>
+      <div class="falling-text">🎈 Bright smiles and fresh styles for your little ones!</div>
       <a href="booking.html" class="cta-button">Book Now</a>
 
-
-         
+      <!-- Image Carousel -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="Images/kid.jpg" alt="Kid haircut 1"></div>
+          <div class="swiper-slide"><img src="Images/kid2.jpg" alt="Kid haircut 2"></div>
+          <div class="swiper-slide"><img src="Images/tool.jpg" alt="Toys for kids"></div>
+          <div class="swiper-slide"><img src="Images/kid3.jpg" alt="Fun kids haircut"></div>
+           <div class="swiper-slide"><img src="Images/tools.jpg" alt="Kid haircut 3"></div>
+              <div class="swiper-slide"><img src="Images/seasor.jpg" alt="Kid haircut 3"></div>
+                <div class="swiper-slide"><img src="Images/machine.jpg" alt="Kid haircut 3"></div>
+              
+              
+        </div>
       </div>
     </main>
 
+    <!-- Footer -->
     <footer>
       <div>
         <h2>📍 Olivia Marie Gardens</h2>
@@ -207,15 +197,49 @@
       <div style="margin-top: 40px;">
         <h3>Follow Us</h3>
         <a href="https://www.tiktok.com/@5riversbarbershop" target="_blank">
-          <img src="tik-tok.jpg" alt="TikTok" />
+          <img src="Images/tik-tok.jpg" alt="TikTok" />
         </a>
         <a href="https://www.instagram.com/5rivers_barbershop/" target="_blank">
-          <img src="insta.jpg" alt="Instagram" />
+          <img src="Images/insta.jpg" alt="Instagram" />
         </a>
       </div>
       <p style="margin-top: 40px;">&copy; 2025 5 Rivers Barbers. Made by <a href="https://www.linkedin.com/in/bhavneet-bhavneet-300998295/" target="_blank">Kush</a></p>
       <a href="index.html" class="back-to-top">⬆ Back to Home</a>
     </footer>
   </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("mobileSidebar");
+      sidebar.classList.toggle("show");
+    }
+
+    document.querySelectorAll('.sidebar a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById("mobileSidebar").classList.remove("show");
+      });
+    });
+
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2.2
+        },
+        1024: {
+          slidesPerView: 3.2
+        }
+      }
+    });
+  </script>
 </body>
 </html>
