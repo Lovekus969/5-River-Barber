@@ -6,130 +6,7 @@
   <title>Modern Hairstyles - 5 River Barbers</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-   html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-    url(modern.jpg) no-repeat center center;
-  background-size: cover;
-  min-height: 100vh; /* ensures at least viewport height */
-}
-
-.container {
-  max-width: 960px;
-  margin: 40px auto 60px auto;
-  padding: 0 20px;
-  text-align: center;
-}
-
-h1, h2 {
-  color: #ffcb47;
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 1.1rem;
-  color: #e0e0e0;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
-.service-card {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  margin: 15px;
-  border-radius: 10px;
-  width: 250px;
-  display: inline-block;
-  vertical-align: top;
-  transition: transform 0.3s;
-}
-
-.service-card:hover {
-  transform: scale(1.05);
-}
-
-.service-card h3 {
-  color: #ffcb47;
-  margin-bottom: 10px;
-}
-
-.btns {
-  margin-top: 30px;
-}
-
-.btns a {
-  display: inline-block;
-  padding: 12px 25px;
-  margin: 10px;
-  background-color: #ffcb47;
-  color: #0f0f0f;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-
-.btns a:hover {
-  background-color: #e68a00;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
-
-.gallery img {
-  width: 280px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-footer {
-  background: #111;
-  padding: 40px 20px;
-  color: #aaa;
-  font-size: 0.95rem;
-  text-align: center;
-}
-
-footer h2, footer h3 {
-  color: #d4af37;
-  margin-bottom: 10px;
-}
-
-footer a {
-  color: #d4af37;
-  text-decoration: none;
-}
-
-footer img {
-  width: 32px;
-  height: 32px;
-  margin: 0 8px;
-  vertical-align: middle;
-}
-
-.back-to-top {
-  display: inline-block;
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: #000000; // set to black
-}
+ 
 
 /* Responsive adjustments */
 @media (max-width: 700px) {
@@ -250,32 +127,7 @@ footer img {
     <button id="toggle-gallery">View More</button>
   </section>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const button = document.getElementById("toggle-gallery");
-      const allImages = document.querySelectorAll(".gallery-img.hidden");
-      let currentBatch = 0;
-      let clickCount = 0;
 
-      button.addEventListener("click", () => {
-        clickCount++;
-        let imagesToShow = clickCount <= 2 ? 3 : 5;
-        let start = currentBatch;
-        let end = currentBatch + imagesToShow;
-
-        for (let i = start; i < end && i < allImages.length; i++) {
-          allImages[i].classList.remove("hidden");
-          allImages[i].classList.add("fade-in");
-        }
-
-        currentBatch += imagesToShow;
-
-        if (currentBatch >= allImages.length) {
-          button.style.display = "none";
-        }
-      });
-    });
-  </script>
 
   <footer>
     <div>
@@ -307,6 +159,6 @@ footer img {
 
     <a href="index.html" class="back-to-top">⬆ Back to Home</a>
   </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
