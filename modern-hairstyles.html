@@ -6,7 +6,15 @@
   <title>Modern Hairstyles - 5 River Barbers</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
- 
+ .container {
+  margin-bottom: 60px; /* space below the service cards */
+}
+
+#gallery {
+  padding-top: 40px; /* space above the gallery */
+  clear: both; /* clears any floats if any */
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 700px) {
@@ -70,35 +78,37 @@
   </style>
 </head>
 <body>
+  <nav class="navbar">
 
-  <div class="container">
-    <h1>Modern Hairstyles</h1>
-    <p>Sharp. Fresh. Trendy. Get the most modern styles made to fit your vibe.</p>
+  <!-- 3-dot icon -->
+  <div class="menu-dots" onclick="toggleSidebar()">⋯</div>
 
-    <div class="service-card">
-      <h3>Undercut</h3>
-      <p>Clean sides. Volume on top. A bold, modern vibe.</p>
-    </div>
-    <div class="service-card">
-      <h3>Fades</h3>
-      <p>From skin fade to taper. Smooth and fresh.</p>
-    </div>
-    <div class="service-card">
-      <h3>Pompadour</h3>
-      <p>Old-school volume with new-school shape.</p>
-    </div>
-    <div class="service-card">
-      <h3>Textured Cuts</h3>
-      <p>Messy, layered, light — effortless and cool.</p>
-    </div>
+  <!-- Desktop nav -->
+  <ul>
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#about">About Us</a></li>
+    <li><a href="booking.html">Book Now</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
 
-    <p>Let your hair speak loud. Book your modern cut today.</p>
-
-    <div class="btns">
-      <a href="booking.html">Book Now</a>
-      <a href="index.html">Back to Services</a>
-    </div>
+  <!-- Sidebar for mobile -->
+  <div class="sidebar" id="mobileSidebar">
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="booking.html">Book Now</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
   </div>
+</nav>
+
+
+
+ 
 
   <section id="gallery">
     <h2>Our Work</h2>
