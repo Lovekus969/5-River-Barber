@@ -231,8 +231,9 @@ h1 {
 }
 
 h2 {
+  text-align: center;
     font-size: 2rem;
-    color: #000000; /* Darker text color */
+    color: #d4af37; /* Darker text color */
     margin-top: 20px;
  
 
@@ -1805,4 +1806,31 @@ footer .back-to-top:hover {
 
 .btn-primary:hover {
   background-color: #333;
+}
+
+
+
+
+
+
+
+
+/* Owner page  */
+ .owner-dashboard {
+   
+   
+    padding: 20px;
+    background-color: rgba(18, 18, 18, 0.5); /* semi-transparent black */
+    color: #eee;
+    backdrop-filter: blur(10px); /* adds blur to the background behind the element */
+    border-radius: 12px; /* optional for rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* optional for depth */
+ }
+
+
+
+ @media (max-width: 768px) {
+  .gallery-img {
+    width: 100% !important;
+  }
 }
