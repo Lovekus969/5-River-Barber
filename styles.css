@@ -1829,8 +1829,36 @@ footer .back-to-top:hover {
 
 
 
- @media (max-width: 768px) {
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gallery-img {
+  width: 30%;
+  max-width: 100px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, opacity 0.6s ease;
+  opacity: 1;
+}
+
+.gallery-img.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Media query to control size better on smaller devices */
+@media (max-width: 768px) {
   .gallery-img {
-    width: 100% !important;
+    width: 30%; /* Still 3 per row */
+    max-width: 100px; /* Prevents it from getting too big */
   }
 }
