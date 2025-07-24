@@ -8,6 +8,7 @@ For some of the pages we did not complete the setting of footer but so fsar i tr
 Issue found on the booking page where when the screen size reduce the nav bar got unseen lets fix it .
  Issue found in the footer section in all beause we use the fotter section common and unfortunantely we put the old version or id inside due to what id doesnot recognise and redirecting file to the main index file and its time to fix this issue no matter what lets fix it . csss lik=ne 1657
  Lets update now the third page which is steam session 
+ So far so good problems find as the user experience the header not mathed the colour palate so its mistmatch in the owner pannel section i will impprove it soon 
 
 Servise section we have five pages and we dont the firt classic page  done so far and its good and now we will move towards tghe next page  which is none other thsn the page of beard trim section adn i know we will built it.
 So dar so good and we alredy fixed our three pages so nice full y working script in mobile view jsut the slider but the code made redudancy here and in oreder to remove redudacy we need to add the script inside and in that script then we have to make new confusted tool javascript file inside and then hide the scipt 
