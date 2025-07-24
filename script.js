@@ -495,3 +495,86 @@ document.querySelectorAll('.sidebar a').forEach(link => {
       loginError.style.display = "none";
     }
   });
+
+
+  function toggleSidebar() {
+  const sidebar = document.getElementById("mobileSidebar");
+  sidebar.classList.toggle("show");
+}
+
+// Close sidebar when a link is clicked
+document.querySelectorAll('.sidebar a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById("mobileSidebar").classList.remove("show");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const button = document.getElementById("toggle-gallery");
+  const allImages = Array.from(document.querySelectorAll(".gallery-img.hidden"));
+  let currentBatch = 0;
+  let clickCount = 0;
+
+  // Array of animation classes to apply in cycle for butterfly effect
+  const animations = ['fade-in-left', 'fade-in-right', 'fade-in-top', 'fade-in-bottom'];
+
+  function revealImages(batchCount) {
+    for (let i = 0; i < batchCount; i++) {
+      if (currentBatch >= allImages.length) {
+        button.style.display = 'none';
+        return;
+      }
+      const img = allImages[currentBatch];
+      img.classList.remove('hidden');
+
+      // Remove any existing animation classes first (just in case)
+      animations.forEach(anim => img.classList.remove(anim));
+
+      // Assign animation based on index (cycle through animations)
+      const animationClass = animations[currentBatch % animations.length];
+      img.classList.add(animationClass);
+
+      currentBatch++;
+    }
+  }
+
+  button.addEventListener("click", () => {
+    clickCount++;
+    let imagesToShow = clickCount <= 2 ? 3 : 5;
+    revealImages(imagesToShow);
+  });
+});
+
+
+
+ScrollReveal().reveal('.from-left', {
+  origin: 'left',
+  distance: '50px',
+  duration: 700,
+  easing: 'ease-in-out',
+  reset: false
+});
+
+ScrollReveal().reveal('.from-right', {
+  origin: 'right',
+  distance: '50px',
+  duration: 700,
+  easing: 'ease-in-out',
+  reset: false
+});
+
+ScrollReveal().reveal('.from-top', {
+  origin: 'top',
+  distance: '50px',
+  duration: 700,
+  easing: 'ease-in-out',
+  reset: false
+});
+
+ScrollReveal().reveal('.from-bottom', {
+  origin: 'bottom',
+  distance: '50px',
+  duration: 700,
+  easing: 'ease-in-out',
+  reset: false
+});
