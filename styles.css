@@ -78,6 +78,12 @@ button:hover {
     margin-top: 20px;
 }
 
+.home {
+    position: relative;
+    background: url('your-background-image.jpg') no-repeat center center/cover; /* Replace with your background image */
+    padding: 100px 20px;
+    text-align: center;
+}
 
 .home .container {
     position: relative;
