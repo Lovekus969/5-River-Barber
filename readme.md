@@ -1,3 +1,6 @@
+
+facing some issuues in the footer like the one thing is common in alla is the tezxt size fort iming of the shop should be little small 
+and the another back to home buoon has a little aroow looks bad remove it 
 5 Rivers Barbershop Website & Management System
 So far so good now its time to fix the section for the owner manual page 
 A modern website for a two-location barbershop with integrated tools to help manage appointments, display services, and provide owner-level control over operations. Built with pure HTML, CSS, JS (frontend), and expanding into full-stack development.
