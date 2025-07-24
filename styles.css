@@ -78,11 +78,58 @@ button:hover {
     margin-top: 20px;
 }
 
+/* Home Section */
 .home {
-    position: relative;
-    background: url('your-background-image.jpg') no-repeat center center/cover; /* Replace with your background image */
-    padding: 100px 20px;
-    text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Video as background */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Makes the video fill entire area */
+  z-index: -2;
+}
+
+/* Optional dark overlay to improve text readability */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* adjust transparency as needed */
+  z-index: -1;
+}
+
+/* Content on top of video */
+.home-content {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.home-content h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.home-content p {
+  font-size: 1.25rem;
+  line-height: 1.6;
 }
 
 .home .container {
