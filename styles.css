@@ -1858,7 +1858,95 @@ footer .back-to-top:hover {
 /* Media query to control size better on smaller devices */
 @media (max-width: 768px) {
   .gallery-img {
-    width: 30%; /* Still 3 per row */
+    width: 35%; /* Still 3 per row */
     max-width: 100px; /* Prevents it from getting too big */
   }
 }
+
+.gallery-swiper {
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.gallery-swiper .swiper-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gallery-swiper .swiper-slide {
+  width: calc(33.33% - 10px); /* 3 images in a row */
+  max-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-swiper img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-swiper img:hover {
+  transform: scale(1.05);
+}
+
+/* 📱 Mobile fix: keep 3 per row even on small screen */
+@media (max-width: 768px) {
+  .gallery-swiper .swiper-slide {
+    width: 30%;
+  }
+}
+
+
+
+
+
+/* Mobile view - only collapse below 420px */
+@media (max-width: 420px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+    padding: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
+
+/* Default for larger devices (430px+ including iPhone 14 Pro Max) */
+.nav-toggle {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+@media (min-width: 430px) {
+  .nav-links {
+    display: flex !important;
+  }
+
+  .nav-toggle {
+    display: none !important;
+  }
+}
+
