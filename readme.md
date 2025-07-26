@@ -1,4 +1,4 @@
-waiting for owner review .. one problem in backcground he dont plike it .. any suggesion this is open source anyone can let me know any prefrence i will update it ..
+waiting for owner review .. one problem in backcground he doesn't like it. Any suggesion, this is open source, anyone can let me know any preference i will update it ..
 facing some issuues in the footer like the one thing is common in alla is the tezxt size fort iming of the shop should be little small 
 and the another back to home buoon has a little aroow looks bad remove it 
 5 Rivers Barbershop Website & Management System
