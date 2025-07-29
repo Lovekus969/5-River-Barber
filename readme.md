@@ -1,3 +1,19 @@
+Mistakes are getting biggger and bigger . 
+One major mistake 
+(function checkPassword() {
+  const correctPassword = '@1313';
+  let enteredPassword = prompt("Enter owner password:");
+  if (enteredPassword !== correctPassword) {
+    alert("Incorrect password. Redirecting...");
+    window.location.href = 'index.html';
+  }
+})();
+ Problem
+Anyone can see the password in View Source or DevTools.
+
+It's just plain text in the frontend — not secure.
+
+
 waiting for owner review .. one problem in backcground he doesn't like it. Any suggesion, this is open source, anyone can let me know any preference i will update it ..
 facing some issuues in the footer like the one thing is common in alla is the tezxt size fort iming of the shop should be little small 
 and the another back to home buoon has a little aroow looks bad remove it 
