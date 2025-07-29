@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Book Appointment - 5 River Barbers</title>
-  <link rel="stylesheet" href="styles.css" /> 
-   <link rel="icon" type="image/png" href="https://www.onlinelogomaker.com/blog/wp-content/uploads/2017/08/barber-shop-logo.jpg">
+  <link rel="stylesheet" href="styles.css" /> <!-- your global CSS -->
+ <link rel="icon" type="image/png" href="https://www.onlinelogomaker.com/blog/wp-content/uploads/2017/08/barber-shop-logo.jpg">
 </head>
 <body>
   <!-- Your existing site header -->
@@ -40,10 +40,6 @@
     </ul>
   </div>
 </nav>
-
-
-    </ul>
-  </nav>
 
   <main>
     <div class="booking-form" id="booking" style="max-width:600px; margin: auto; padding: 20px;">
@@ -149,19 +145,19 @@
      <div class="social-links" style="margin-top: 20px;">
       <h3 style="color: #fff;">Follow Us</h3>
       <a href="https://www.tiktok.com/@5riversbarbershop" target="_blank" style="margin-right: 15px;">
-        <img src="tik-tok.jpg" alt="TikTok" style="width: 32px; height: 32px;">
+        <img src="Images/tik-tok.jpg" alt="TikTok" style="width: 32px; height: 32px;">
       </a>
       <a href="https://www.instagram.com/5rivers_barbershop/" target="_blank">
-        <img src="insta.jpg" alt="Instagram" style="width: 32px; height: 32px;">
+        <img src="Images/insta.jpg" alt="Instagram" style="width: 32px; height: 32px;">
       </a>
     </div>
 
     <p>
   &copy; 2025 5 Rivers Barbers. All rights reserved. 
-<!--   Made by <a href="https://www.linkedin.com/in/bhavneet-bhavneet-300998295/" target="_blank" style="color: rgb(8, 112, 181);">Kush</a> -->
+  Made by <a href="https://www.linkedin.com/in/bhavneet-bhavneet-300998295/" target="_blank" style="color: rgb(8, 112, 181);">Kush</a>
 </p>
 
-    <a href="index.html" class="back-to-top" style="color: black;">Back to Home</a>
+    <a href="index.html" class="back-to-top" style="color: black;">⬆ Back to Home</a>
 
   </div>
  <div class="footer-maps" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
@@ -195,7 +191,17 @@
     // Optionally do text-to-speech or animation
   }
 
-  function handleFormSubmission(event) {
+  function formatTime12Hour(time24) {
+  // time24 is like "14:30" or "09:05"
+  const [hourStr, minute] = time24.split(':');
+  let hour = parseInt(hourStr, 10);
+  const ampm = hour >= 12 ? 'PM' : 'AM';
+  hour = hour % 12;
+  if (hour === 0) hour = 12; // 0 hour is 12 AM
+  return `${hour}:${minute} ${ampm}`;
+}
+
+function handleFormSubmission(event) {
   event.preventDefault();
 
   const name = document.getElementById("customer-name").value.trim();
@@ -209,26 +215,23 @@
 
   const newAppointment = { name, email, phone, notes, location, barber, date, time };
 
-  // Load existing data or initialize
-  const storedMap = JSON.parse(localStorage.getItem("appointmentsByBarber") || "{}");
+  // Get existing appointments (flat array)
+  const appointments = JSON.parse(localStorage.getItem("appointments") || "[]");
 
-  if (!storedMap[barber]) {
-    storedMap[barber] = [];
-  }
-
-  // Check conflict
-  const isConflict = storedMap[barber].some(slot =>
-    slot.date === date && slot.time === time && slot.location === location
+  // Check if this exact slot already booked (optional)
+  const isConflict = appointments.some(appt =>
+    appt.barber === barber && appt.date === date && appt.time === time && appt.location === location
   );
-
   if (isConflict) {
     alert("⚠️ This time slot is already booked for the selected barber and location.");
     return;
   }
 
-  // Store in map
-  storedMap[barber].push(newAppointment);
-  localStorage.setItem("appointmentsByBarber", JSON.stringify(storedMap));
+  // Add new appointment
+  appointments.push(newAppointment);
+
+  // Save updated array back to localStorage under 'appointments'
+  localStorage.setItem("appointments", JSON.stringify(appointments));
 
   playCheerfulTone();
 
@@ -239,14 +242,6 @@
     thankUserByName(name);
     document.getElementById("appointment-form").reset();
   }, 2000);
-}
-
-
-const storedMap = JSON.parse(localStorage.getItem("appointmentsByBarber") || "{}");
-
-for (const barber in storedMap) {
-  console.log(`Appointments for ${barber}:`);
-  console.table(storedMap[barber]);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -275,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-  <script>
+<script>
 function toggleSidebar() {
   const sidebar = document.getElementById("mobileSidebar");
   sidebar.classList.toggle("show");
@@ -290,7 +285,7 @@ document.querySelectorAll('.sidebar a').forEach(link => {
 
  
 </script>
-  <script src="script.js"></script>
+<script src="script.js"></script>
 <script src="Confused.js"></script>
 
 </body>
