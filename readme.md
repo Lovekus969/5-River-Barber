@@ -1,3 +1,5 @@
+Lets secure it using hash pass word or someing lets searcch and do it 
+and i will deploy it by the end of this month . 
 Mistakes are getting biggger and bigger . 
 One major mistake 
 (function checkPassword() {
