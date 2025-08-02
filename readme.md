@@ -1,17 +1,4 @@
-one more owner page missing  the fav icon 
-Lets secure it using hash pass word or someing lets searcch and do it 
-and i will deploy it by the end of this month . 
-Mistakes are getting biggger and bigger . 
-One major mistake 
-(function checkPassword() {
-  const correctPassword = '@1313';
-  let enteredPassword = prompt("Enter owner password:");
-  if (enteredPassword !== correctPassword) {
-    alert("Incorrect password. Redirecting...");
-    window.location.href = 'index.html';
-  }
-})();
- Problem
+problem 
 Anyone can see the password in View Source or DevTools.
 
 It's just plain text in the frontend — not secure.
