@@ -445,7 +445,7 @@ body {
     font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   
   
-    background: url('https://wallpapercave.com/wp/wp9441547.jpg') no-repeat center center fixed;
+    background: url('Images/bg.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #000000;
     line-height: 1.6;
@@ -1745,7 +1745,7 @@ footer .back-to-top:hover {
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
-  color: #111;
+  color: #ffcb47;
   margin-bottom: 10px;
 }
 
@@ -1779,7 +1779,7 @@ footer .back-to-top:hover {
 
 .service-box h3 {
   font-size: 1.5rem;
-  color: #222;
+  color: #d9b62d;
   margin-bottom: 10px;
 }
 
