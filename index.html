@@ -67,7 +67,7 @@
     margin: 20px auto;
     ">
   <h2>🍁 Snip Happens – Book Now! 🍁</h2>
-  <p>Look sharp, feel sharper 💈💎</p>
+  <p>Ready for your fresh cut?...</p>
   <a href="booking.html" class="btn-book-now" 
      style="
        display: inline-block;
@@ -160,11 +160,13 @@
   <div class="container">
     <h2>Our Work</h2>
 
-    <div class="gallery-grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-      <!-- Initially visible images -->
-      <img class="gallery-img" src="Images/img1.jpg" alt="Style 1" style="width: 30%; border-radius: 8px;">
-      <img class="gallery-img" src="Images/IMG2.jpg" alt="Style 2" style="width: 30%; border-radius: 8px;">
-      <img class="gallery-img" src="Images/IMG3.jpg" alt="Style 3" style="width: 30%; border-radius: 8px;">
+<div class="gallery-grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+  <!-- Larger images (around 45% width) -->
+  <img class="gallery-img" src="Images/img1.jpg" alt="Style 1" style="width: 45%; border-radius: 12px;">
+  <img class="gallery-img" src="Images/IMG2.jpg" alt="Style 2" style="width: 45%; border-radius: 12px;">
+  <img class="gallery-img" src="Images/IMG3.jpg" alt="Style 3" style="width: 45%; border-radius: 12px;">
+</div>
+
 
       <!-- Hidden by default -->
       <img class="gallery-img hidden" src="Images/IMG4.jpg" alt="Style 4" style="width: 30%; border-radius: 8px;">
@@ -201,12 +203,13 @@
   }
 
   .gallery-img {
-    width: 30%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.4s ease, opacity 0.6s ease;
-    opacity: 1;
-  }
+  width: 45%; /* Increased from 30% */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, opacity 0.6s ease;
+  opacity: 1;
+}
+
 
   .gallery-img.hidden {
     display: none;
@@ -233,6 +236,12 @@
       transform: scale(1);
     }
   }
+  @media (max-width: 768px) {
+  .gallery-img {
+    width: 90%;
+  }
+}
+
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
