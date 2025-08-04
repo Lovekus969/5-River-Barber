@@ -1,3 +1,4 @@
+Still some issues are find like first issue in the background img whichi will chane\ge and second is the image size in the gallary seection for user 14 pro max seems not good user experience matter .
 see update the inner strength of code 
 problem 
 Anyone can see the password in View Source or DevTools.
