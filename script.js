@@ -578,3 +578,15 @@ ScrollReveal().reveal('.from-bottom', {
   easing: 'ease-in-out',
   reset: false
 });
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  });
+
+
