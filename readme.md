@@ -1,3 +1,4 @@
+Problem found in the kid section page 
 5 Rivers Barbershop Website & Management System — Progress Update
 What’s Working Well So Far
 The core features are solid — appointments, services, gallery, and owner control.
