@@ -5,7 +5,7 @@ The core features are solid — appointments, services, gallery, and owner contr
 
 The UI feels modern with a clean, responsive design that works on mobile and desktop.
 
-Owner panel now has a secure passcode prompt (@1313) with JS validation and obfuscation to hide the logic.
+
 
 Booking page, service pages, and gallery are coming together nicely.
 
@@ -65,36 +65,10 @@ Continue UI improvements: animations, smooth scroll, mobile-first refinements.
 
 Update favicon and unify branding across all pages.
 
-Motivation & Philosophy
-I’m not stopping until I hit 555 contributions on this project.
-Every bug fixed, every feature added is a step closer to something great.
-This isn’t just a website — it’s my grind, my dream in motion.
-Real dev work is messy and imperfect — but persistence wins.
-I build better every day, learning from every mistake.
+What We’re Going to Do Next
+      1. Testing & Debugging
+      Test the end-to-end flow locally:
 
-Quick Summary of Tech Stack
-Frontend: HTML, CSS, JavaScript
-
-Backend (planned): Node.js + Express.js
-
-Database (planned): MongoDB or Firebase
-
-Hosting: Netlify for frontend, Render for backend
-
-Security: JS Obfuscation + client-side login prompt (temporary)
-
-UX/UI: Responsive design, blurred backgrounds, hover effects, Google Maps integration
-
-Owner Panel Access Logic (JS snippet):
-js
-Copy
-Edit
-(function checkPassword() {
-  const correctPassword = '@1313';
-  let entered = prompt("Enter Owner Password:");
-
-  if (entered !== correctPassword) {
-    alert("Wrong password! Redirecting...");
-    window.location.href = 'index.html';
-  }
-})();
+    Validate that the frontend sends correct JSON requests.
+    Confirm the backend correctly parses JSON, sends email, and stores bookings. Use tools like Postman and browser dev tools to debug.
+    Handle and log errors gracefully both frontend and backend.
