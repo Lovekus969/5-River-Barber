@@ -72,3 +72,7 @@ What We’re Going to Do Next
     Validate that the frontend sends correct JSON requests.
     Confirm the backend correctly parses JSON, sends email, and stores bookings. Use tools like Postman and browser dev tools to debug.
     Handle and log errors gracefully both frontend and backend.
+Task 2 : - >  Improve Email Notifications
+                  Customize email content for the owner including all appointment details.
+                        Optionally add SMS or other notification channels.
+                              Implement email templates and proper error handling for email failures.
