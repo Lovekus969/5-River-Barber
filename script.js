@@ -402,20 +402,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginBtn = document.getElementById("owner-login-btn");
   const loginError = document.getElementById("login-error");
 
-  document.addEventListener("keydown", function(e) {
-    if (e.ctrlKey && e.altKey && e.key.toLowerCase() === "o") {
-      e.preventDefault();
-
-      if (sessionStorage.getItem("ownerAccessGranted") === "true") {
-        window.location.href = "owner-dashboard.html";
-      } else {
-        loginError.style.display = "none";
-        passwordInput.value = "";
-        loginPanel.style.display = "block";
-        passwordInput.focus();
-      }
-    }
-  });
 
   loginBtn.addEventListener("click", () => {
     const enteredPass = passwordInput.value;
@@ -462,7 +448,7 @@ document.querySelectorAll('.sidebar a').forEach(link => {
   const loginError = document.getElementById("login-error");
 
   document.addEventListener("keydown", function(e) {
-    if (e.ctrlKey && e.altKey && e.key.toLowerCase() === "o") {
+    if (e.ctrlKey && e.altKey && e.key.toLowerCase() === "k") {
       e.preventDefault();
 
       if (sessionStorage.getItem("ownerAccessGranted") === "true") {
