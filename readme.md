@@ -1,8 +1,8 @@
 # 5 Rivers Barbershop — Website & Management System
 
-## 🚀 Progress Update
+##  Progress Update
 
-### ✅ What’s Working Well
+### What’s Working Well
 - Core features implemented: **appointments, services, gallery, owner control**.
 - Modern, **responsive UI** for desktop and mobile.
 - **Booking page, services pages, and gallery** functional.
