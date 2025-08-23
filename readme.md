@@ -1,4 +1,5 @@
 # 5 Rivers Barbershop — Website & Management System
+## lets update it and make some dynammimc content before loading  the index page 
 
 ##  Progress Update
 
