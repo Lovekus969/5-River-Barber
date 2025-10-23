@@ -10,13 +10,13 @@
 - **Google Maps** integrated for both locations in the footer.
 - **Income calculator** polished (better contrast + blur effects).
 - Fixed key bugs:
-  - Password redirect issues
-  - “View More” button conflicts
-  - Navbar visibility on smaller screens
+  - Password redirect issues              Fixed 
+  - “View More” button conflicts          fixed
+  - Navbar visibility on smaller screens   fixed 
 - JS redundancy reduced by moving repeated scripts into **`confuser.js`** (obfuscated).
 - Classic haircut page completed; **Beard Trim** page next.
 - Footer standardized across pages.
-- Owner Panel operational with booking management and daily income calculator.
+
 
 ---
 
