@@ -20,95 +20,17 @@
       transition: all 0.3s ease;
     }
 
-    /* Fixed Banner */
-    .halloween-banner {
-      background: linear-gradient(90deg, #ff7300, #ff9a00, #ffb347);
-      color: black;
-      text-align: center;
-      padding: 10px 0;
-      font-weight: bold;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 9999;
-      box-shadow: 0 2px 10px rgba(255, 153, 0, 0.3);
-      animation: glowBanner 2.5s ease-in-out infinite alternate;
-    }
-
-    @keyframes glowBanner {
-      from { box-shadow: 0 0 10px #ffb347; }
-      to { box-shadow: 0 0 25px #ff9a00; }
-    }
-
-    /* Navbar adjustment */
-    nav.navbar {
-      margin-top: 50px; /* push below banner */
-    }
-
-    /* Button hover effect */
-    .service-btn, .btn-book-now, .view-more-btn {
-      background-color: #ff9a00 !important;
-      border: none;
-      color: #000;
-      transition: 0.3s;
-      font-weight: bold;
-    }
-
-    .service-btn:hover, .btn-book-now:hover, .view-more-btn:hover {
-      background-color: #fff;
-      color: #ff7300;
-      box-shadow: 0 0 15px #ff7300;
-      transform: scale(1.05);
-    }
-
-    /* Section headers */
-    h2, h3 {
-      color: #ffb347;
-      text-shadow: 0 0 10px rgba(255, 145, 0, 0.4);
-    }
 
     /* Home Section Glow */
     #home {
-      background: url('https://images.unsplash.com/photo-1605972281876-8fefb58dc17f?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+      background: url('https://unsplash.com/photos/close-up-of-pumpkin-near-wall-EFQlS6SL9uw') center/cover no-repeat;
       text-align: center;
       padding: 120px 20px;
       border-bottom: 3px solid #ff9a00;
       color: #fff;
     }
 
-    #home h2 {
-      font-size: 2rem;
-      text-shadow: 0 0 25px rgba(255, 119, 0, 0.8);
-    }
-
-    /* Footer */
-    footer {
-      background-color: #111;
-      border-top: 2px solid #ff9a00;
-      padding: 30px 20px;
-      color: #ddd;
-      text-align: center;
-    }
-
-    .footer a {
-      color: #ffb347;
-    }
-
-    /* Small pumpkin decorations */
-    .pumpkin::before {
-      content: "🎃 ";
-    }
-
-    /* Glow animation for header */
-    .glow {
-      animation: textGlow 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes textGlow {
-      from { text-shadow: 0 0 10px #ff7300; }
-      to { text-shadow: 0 0 20px #ffb347, 0 0 30px #ff9a00; }
-    }
-  </style>
+    
 </head>
 <body>
 
@@ -634,5 +556,6 @@ document.querySelectorAll('.sidebar a').forEach(link => {
 
 </body> 
 </html>
+
 
 
