@@ -1,0 +1,12 @@
+What is Node.js?
+
+Node.js is a JavaScript runtime that allows you to run JavaScript outside of a web browser, mainly on servers.
+
+Before Node.js, JavaScript was mostly used only in browsers. With Node.js, you can build:
+
+Web servers
+REST APIs
+Real-time chat applications
+Microservices
+Backend systems
+Command-line tools
