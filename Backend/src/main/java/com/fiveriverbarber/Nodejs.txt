@@ -10,3 +10,11 @@ Real-time chat applications
 Microservices
 Backend systems
 Command-line tools
+
+JavaScript in a browser:
+
+console.log("Hello from browser");
+
+JavaScript in Node.js:
+
+console.log("Hello from Node.js");
